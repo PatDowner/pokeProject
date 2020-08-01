@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resources</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <style>
         body {
@@ -30,52 +31,82 @@
 <body>
 
     <nav>
-        <div class="nav-wrapper">
-            <a href="index.html" class="brand-logo" class="material-icons">Home</a>
+        <div class="nav-wrapper blue darken-4">
+          <a href="index.html" class="brand-logo yellow-text"><i class="material-icons">home</i>Home</a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="data.html">Pokemon Data</a></li>
-                <li><a href="cards.html">Pokemon Cards</a></li>
-                <li><a href="trivia.html">Pokemon Trivia</a></li>
-                <li><a href="resources.html"> Pokemon Resources</a></li>
-                <li><a href="aboutus.html">About us</a></li>
+                <li><a class="yellow-text" href="data.html">Pokemon Data</a></li>
+                <li><a class="yellow-text" href="cards.html">Pokemon Cards</a></li>
+                <li><a class="yellow-text" href="trivia.html">Pokemon Trivia</a></li>
+                <li><a class="yellow-text" href="resources.html"> Pokemon Resources</a></li>
+                <li><a class="yellow-text" href="aboutus.html">About us</a></li>
             </ul>
         </div>
     </nav>
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <div class="row">
+        <div class="col s7 push-s5"><span class="flow-text"></span></div>
+        <div class="col s5 pull-s7"><span class="flow-text">  <ul class="collapsible">
+            <li>
+              <div class="collapsible-header"><i class="material-icons">web</i>Official Site</div>
+              <div class="collapsible-body"><span> <a href="https://www.pokemon.com/us/" target="_blank" >Pokemon Official site</a> </span></div>
+            </li>
+            <li>
+              <div class="collapsible-header"><i class="material-icons">comment</i>Pokemon Discussion Forums</div>
+              <div class="collapsible-body"><span><a href="https://www.pokecommunity.com/" target="_blank" >Poke Community</a></span></div>
+            </li>
+            <li>
+              <div class="collapsible-header"><i class="material-icons">shopping_cart</i>Shop</div>
+              <div class="collapsible-body"><span><a href="https://www.pokemoncenter.com/?gclid=Cj0KCQjwpZT5BRCdARIsAGEX0zk8g4VjDzUwTTQwRp5ijVasgCGM4VaTYr53JL5cvOgWFZ6n3mG2sDoaAqG7EALw_wcB" target="_blank" >Pokemon Center</a></span></div>
+              <li>
+                <div class="collapsible-header"><i class="material-icons">place</i>Events</div>
+                <div class="collapsible-body"><span><a href="https://pokemongolive.com/en/events/fest/2020/" target="_blank" >Pokemon Go Live Fest</a></span></div>
+              </li>
+            </li>
+          </ul></span></div>
+      </div>
 
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
-    <footer class="page-footer">
-        <div class="container">
-            <div class="row">
-                <div class="col l6 s12">
-                    <h5 class="white-text">Footer Content</h5>
-                    <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer
-                        content.</p>
-                </div>
-                <div class="col l4 offset-l2 s12">
-                    <h5 class="white-text">Links</h5>
-                    <ul>
-                        <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-                        <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-                        <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-                        <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
-                    </ul>
-                </div>
+<footer class="page-footer blue darken-4">
+    <div class="container">
+        <div class="row">
+            <div class="col l6 s12">
+                <h5 class="yellow-text">Footer Content</h5>
+                <p class="yellow-text">You can use rows and columns here to organize your footer
+                    content.</p>
+            </div>
+            <div class="col l4 offset-l2 s12">
+                <h5 class="yellow-text">Links</h5>
+                <ul>
+                    <li><a class="yellow-text" href="#!">Link 1</a></li>
+                    <li><a class="yellow-text" href="#!">Link 2</a></li>
+                    <li><a class="yellow-text" href="#!">Link 3</a></li>
+                    <li><a class="yellow-text" href="#!">Link 4</a></li>
+                </ul>
             </div>
         </div>
-        <div class="footer-copyright">
-            <div class="container">
-                © 2014 Copyright Text
-                <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
-            </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="container yellow-text">
+            © 2014 Copyright Text
+            <a class="yellow-text right" href="#!">More Links</a>
         </div>
-    </footer>
+    </div>
+</footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
 
     <script>
 
+document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.sidenav');
+    var instances = M.Sidenav.init(elems);
+  });
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.collapsible');
+    var instances = M.Collapsible.init(elems);
+  });
 
 
     </script>

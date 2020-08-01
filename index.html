@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     
 
 
@@ -21,17 +22,19 @@
 <body>
 
     <nav>
-        <div class="nav-wrapper">
-            <a href="index.html" class="brand-logo" class="material-icons">Home</a>
+        <div class="nav-wrapper blue darken-4">
+          <a href="index.html" class="brand-logo yellow-text"><i class="material-icons">home</i>Home</a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="data.html">Pokemon Data</a></li>
-                <li><a href="cards.html">Pokemon Cards</a></li>
-                <li><a href="trivia.html">Pokemon Trivia</a></li>
-                <li><a href="resources.html"> Pokemon Resources</a></li>
-                <li><a href="aboutus.html">About us</a></li>
+                <li><a class="yellow-text" href="data.html">Pokemon Data</a></li>
+                <li><a class="yellow-text" href="cards.html">Pokemon Cards</a></li>
+                <li><a class="yellow-text" href="trivia.html">Pokemon Trivia</a></li>
+                <li><a class="yellow-text" href="resources.html"> Pokemon Resources</a></li>
+                <li><a class="yellow-text" href="aboutus.html">About us</a></li>
             </ul>
         </div>
     </nav>
+
+  
     <br>
     <div class="row parallax-container">
 
@@ -42,8 +45,8 @@
         <div class="col s1">3</a></div>
         <div class="col s1"><a class="btn tooltipped waves-effect waves-light btn-medium"  data-position="bottom" data-tooltip="We do Too!">Love Pokemon?</a></div>
         <div class="col s1">5</div>
-        <div class="col s1 z-depth-5 z-depth-5">6</div>
-        <div class="col s1">7</div>
+        <div class="col s1 z-depth-5 z-depth-5"><a class="btn tooltipped waves-effect waves-light btn-medium" onclick="M.toast({html: 'I love Pokemon!'})" class="btn">Are you sure?</a></div>
+        
         <div class="col s1">8</div>
         <div class="col s1"><a class="btn tooltipped waves-effect waves-light btn-medium"  data-position="bottom" data-tooltip="Them all!">Gotta Catch?</a></div>
         <div class="col s1">10</div>
@@ -105,7 +108,7 @@
     </div>
 
 
-    <a class="btn tooltipped waves-effect waves-light btn-medium" onclick="M.toast({html: 'I Love Pokemon!'})" class="btn">Click here if you Love Pokemon!</a>
+    
     
     <div class="col s12 m7" >
         <h2 class="header"></h2>
@@ -126,11 +129,11 @@
                 </ol></p>
             </div>
             <div class="card-action z-depth-5 z-depth-5">
-                <a class="btn tooltipped" data-position="top" data-tooltip="1995!">What Year was Pokemon Created?</a>
-                <a class="btn tooltipped" data-position="top" data-tooltip="Satoshi Tajiri!">Who Created Pokemon?</a>
-                <a class="btn tooltipped" data-position="top" data-tooltip="20!">How Many Seasons Were there in the Anime Television Series?</a>
-                <a class="btn tooltipped" data-position="top" data-tooltip="Pocket Monsters!">What is Pokemon Known as in Japan?</a>
-                <a class="btn tooltipped" data-position="top" data-tooltip="Pokemon Red and Blue!">What was the first video Game?</a>
+                <a class="btn tooltipped waves-effect waves-light btn-medium" data-position="top" data-tooltip="1995!">What Year was Pokemon Created?</a>
+                <a class="btn tooltipped waves-effect waves-light btn-medium" data-position="top" data-tooltip="Satoshi Tajiri!">Who Created Pokemon?</a>
+                <a class="btn tooltipped waves-effect waves-light btn-medium" data-position="top" data-tooltip="20!">How Many Seasons ran on the Anime Television Series?</a>
+                <a class="btn tooltipped waves-effect waves-light btn-medium" data-position="top" data-tooltip="Pocket Monsters!">What is Pokemon Known as in Japan?</a>
+                <a class="btn tooltipped waves-effect waves-light btn-medium" data-position="top" data-tooltip="Pokemon Red and Blue!">What was the first video Game?</a>
                 
             </div>
           </div>
@@ -216,29 +219,29 @@
    
    
 <br><br><br>
-    <footer class="page-footer">
+    <footer class="page-footer blue darken-4">
         <div class="container">
             <div class="row">
                 <div class="col l6 s12">
-                    <h5 class="white-text">Footer Content</h5>
-                    <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer
+                    <h5 class="yellow-text">Footer Content</h5>
+                    <p class="yellow-text">You can use rows and columns here to organize your footer
                         content.</p>
                 </div>
                 <div class="col l4 offset-l2 s12">
-                    <h5 class="white-text">Links</h5>
+                    <h5 class="yellow-text">Links</h5>
                     <ul>
-                        <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-                        <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-                        <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-                        <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+                        <li><a class="yellow-text" href="#!">Link 1</a></li>
+                        <li><a class="yellow-text" href="#!">Link 2</a></li>
+                        <li><a class="yellow-text" href="#!">Link 3</a></li>
+                        <li><a class="yellow-text" href="#!">Link 4</a></li>
                     </ul>
                 </div>
             </div>
         </div>
         <div class="footer-copyright">
-            <div class="container">
+            <div class="container yellow-text">
                 © 2014 Copyright Text
-                <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+                <a class="yellow-text right" href="#!">More Links</a>
             </div>
         </div>
     </footer>
@@ -276,6 +279,12 @@
     var elems = document.querySelectorAll('.materialboxed');
     var instances = M.Materialbox.init(elems);
   }); 
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.sidenav');
+    var instances = M.Sidenav.init(elems);
+  });
+
 
     </script>
 
