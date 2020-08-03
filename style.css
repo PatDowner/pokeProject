@@ -1,6 +1,7 @@
 .position {
   margin-top: 300px;
-  margin-left: 150px;
+  margin-left: 150px; 
+  margin-right: 600px;
   background-color: rgb(218, 173, 77);
   border-radius: 50px 50px 50px 50px;
 }
