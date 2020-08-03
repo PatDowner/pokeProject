@@ -33,7 +33,7 @@
 
     <nav>
         <div class="nav-wrapper blue darken-4">
-          <a href="index.html" class="brand-logo yellow-text"><i class="material-icons">home</i>Home</a>
+            <a href="index.html" class="brand-logo yellow-text"><i class="material-icons">home</i>Home</a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
                 <li><a class="yellow-text" href="data.html">Pokemon Data</a></li>
                 <li><a class="yellow-text" href="cards.html">Pokemon Cards</a></li>
@@ -47,21 +47,20 @@
 
     <form>
         <input id="pokemon" type="text">
-        
+        <button id="searchPokemon">Search</button>
     </form>
 
-<div class="row">
-    <form class="col s12">
-        <div class="row">
-            <button id="searchPokemon">Search</button>
-            <div class="input-field col s6">
-                <i class="material-icons prefix">mode_edit</i>
-                <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
-                <label for="icon_prefix2">First Name</label>
+    <div class=" background position row" >
+        <form class="col s12">
+            <div class="row">
+                <div class="input-field col s6">
+                    <i class="material-icons prefix">mode_edit</i>
+                    <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
+                    <label for="icon_prefix2">Enter Pokemon Name</label>
+                </div>
             </div>
-        </div>
-    </form>
-</div>
+        </form>
+    </div>
 
 
     <p id="results"></p>
@@ -69,54 +68,54 @@
 
 
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 
-<footer class="page-footer blue darken-4">
-    <div class="container">
-        <div class="row">
-            <div class="col l6 s12">
-                <h5 class="yellow-text">Footer Content</h5>
-                <p class="yellow-text">You can use rows and columns here to organize your footer
-                    content.</p>
-            </div>
-            <div class="col l4 offset-l2 s12">
-                <h5 class="yellow-text">Links</h5>
-                <ul>
-                    <li><a class="yellow-text" href="#!">Link 1</a></li>
-                    <li><a class="yellow-text" href="#!">Link 2</a></li>
-                    <li><a class="yellow-text" href="#!">Link 3</a></li>
-                    <li><a class="yellow-text" href="#!">Link 4</a></li>
-                </ul>
+    <footer class="page-footer blue darken-4">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="yellow-text">Footer Content</h5>
+                    <p class="yellow-text">You can use rows and columns here to organize your footer
+                        content.</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="yellow-text">Links</h5>
+                    <ul>
+                        <li><a class="yellow-text" href="#!">Link 1</a></li>
+                        <li><a class="yellow-text" href="#!">Link 2</a></li>
+                        <li><a class="yellow-text" href="#!">Link 3</a></li>
+                        <li><a class="yellow-text" href="#!">Link 4</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="footer-copyright">
-        <div class="container yellow-text">
-            © 2014 Copyright Text
-            <a class="yellow-text right" href="#!">More Links</a>
+        <div class="footer-copyright">
+            <div class="container yellow-text">
+                © 2014 Copyright Text
+                <a class="yellow-text right" href="#!">More Links</a>
+            </div>
         </div>
-    </div>
-</footer>
+    </footer>
 
 
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
-        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
 
     <script src="./assets/data.js"></script>
-    
+
 
 
     <script>
 
-document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.sidenav');
-    var instances = M.Sidenav.init(elems);
-  });
+        document.addEventListener('DOMContentLoaded', function () {
+            var elems = document.querySelectorAll('.sidenav');
+            var instances = M.Sidenav.init(elems);
+        });
 
 
     </script>
