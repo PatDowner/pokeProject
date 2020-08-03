@@ -62,3 +62,11 @@ background-color: grey;
 .flying {
   background-color: plum;
 }
+
+.dark {
+  background-color: rgb(60, 0, 0);
+}
+
+.poison {
+  background-color: rgb(101, 56, 101);
+}
