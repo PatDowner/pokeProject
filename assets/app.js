@@ -27,23 +27,12 @@ document.getElementById('search').addEventListener('click', event => {
         let imgLink = res.data.cards[i].imageUrlHiRes
         pokeCard.innerHTML = `<img src="${imgLink}" class="pokeCard">`
         document.getElementById('cardDisplay').prepend(pokeCard)
-
-
       }
-
-
-      // let pokeCard = document.createElement('img')
-      // pokeCard.innerHTML = `<img src="${imgLink}" class="pokeCard">`
-      // console.log(`https://api.pokemontcg.io/v1/cards?name=${pokeName}`)
-      // document.getElementById('cardDisplay').append(pokeCard)
-      // end loop
-      // }
-      //   // end of button click listener
-      // })
 
       // end of .then
     })
     .catch(err => {
       console.log(err)
     })
+  // end of clicked search button event listener
 })
