@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Materialize CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+</head>
+
+<body>
+
+    <div class="row">
+        <div class="col s12">
+            Pokemon Name
+            <div class="input-field inline">
+                <input id="nameInput" type="text" class="validate">
+                <label for="nameInput">i.e. Pikachu</label>
+            </div>
+            <!-- This is our search button -->
+            <button id="search">search</button>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- Materialize Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <!-- This is the Axios CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <script>
+
+        let currentIndex = 0
+
+        const getSearch = pokeName => {
+
+            
+            if (pokeName === res.data[currentIndex].cards.name) {
+                console.log(pokeName)
+                console.log(res.data[currentIndex].cards.name)
+
+            }else {
+                console.log(error)
+            }
+            currentIndex ++
+        }
+
+        axios.get(`https://api.pokemontcg.io/v1/cards`)
+            .then(res => {
+                // console.log(res.data)
+                document.getElementById('search').addEventListener('click', event => {
+                    event.preventDefault()
+                    console.log(document.getElementById('nameInput').value)
+                    console.log(res.data.cards[0].name)
+
+                    let pokeName = document.getElementById('nameInput').value
+
+
+
+                })
+
+            })
+            .catch(err => {
+                console.log(err)
+            })
+
+
+
+
+    </script>
+</body>
+
+</html>
