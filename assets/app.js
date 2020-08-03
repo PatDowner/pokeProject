@@ -3,7 +3,7 @@
 // }
 
 
-axios.get(`https://api.pokemontcg.io/v1/cards`)
+axios.get(`https://api.pokemontcg.io/v1/cards/name`)
   .then(res => {
     // console.log(res.data)
     document.getElementById('search').addEventListener('click', event => {
@@ -21,32 +21,35 @@ axios.get(`https://api.pokemontcg.io/v1/cards`)
       // name typed into search field
       let pokeName = document.getElementById('nameInput').value
       let pokeNameIndex = ''
-      // Run a loop to find which item in teh array matches that name
-      for (let i = 0; i < res.data.cards.length; i++) {
+      // // Run a loop to find which item in teh array matches that name
+      // for (let i = 0; i < res.data.cards.length; i++) {
 
-        // finds index position of that name
+      //   // finds index position of that name
+      //   if (pokeName === res.data.cards[i].name) {
+      //     pokeNameIndex = currentIndex
+
+      //   } else {
+      //     // console.log('else ' + pokeName)
+      //     // console.log([i])
+      //     currentIndex++
+      //   }
+      //   // end of loop
+      // }
+      // console.log(pokeNameIndex)
+
+      // Run loop to fetch all the cards for pokeName
+      for (let i = 0; i < res.data.cards.length; i++)
         if (pokeName === res.data.cards[i].name) {
-          pokeNameIndex = currentIndex
-
+          console.log(res.data.cards[i].name)
+          console.log(res.data.cards[i].imageUrlHiRes)
         } else {
-          // console.log('else ' + pokeName)
-          // console.log([i])
-          currentIndex++
+          console.log('oops')
         }
-        // end of loop
-      }
-      console.log(pokeNameIndex)
-      console.log(res.data.cards[pokeNameIndex].id)
-      let setCode = res.data.cards[pokeNameIndex].setCode
-      console.log(setCode)
-      let number = res.data.cards[pokeNameIndex].number
-      console.log(number)
-
-      let card = document.createElement('div')
-      card.className = 'card'
-      card.innerHTML = `<img src = "https://images.pokemontcg.io/${setCode}/${number}_hires.png">`
-
-      document.getElementById('cardDisplay').append(card)
+      // console.log(imgLink)
+      // let pokeCard = document.createElement('img')
+      // pokeCard.innerHTML = `<img src="${imgLink}" class="pokeCard">`
+      // console.log(`https://api.pokemontcg.io/v1/cards?name=${pokeName}`)
+      // document.getElementById('cardDisplay').append(pokeCard)
 
       // end of button click listener
     })
