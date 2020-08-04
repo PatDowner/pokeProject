@@ -26,12 +26,26 @@ document.getElementById('searchName').addEventListener('click', event => {
         let pokeCard = document.createElement('div')
         pokeCard.className = 'col s3 cardDiv'
         let imgLink = res.data.cards[i].imageUrlHiRes
+        let cardSet = res.data.cards[i].set
+        let cardRarity = res.data.cards[i].rarity
         pokeCard.innerHTML = `
-        <img src="${imgLink}" class="pokeCard">`
+        <div class="pokeCardItem">
+          <img src="${imgLink}" class="pokeCard">
+          <div class="cardInfo">
+            <p class="cardRarity"><b>Rarity:</b> ${cardRarity}</p>
+            <p class="cardSet"><b>Card set:</b> ${cardSet}</p>
+          </div>
+        </div>
+        `
         document.getElementById('cardDisplay').prepend(pokeCard)
       }
 
-      pokeName = ''
+      document.getElementById('info').innerText = `Pokemon: ${pokeName}`
+
+      document.getElementById('info').classList.remove('hide')
+
+      // clears text from nameInput
+      document.getElementById('nameInput').value = ''
 
       // end of .then
     })
@@ -68,12 +82,27 @@ document.getElementById('searchType').addEventListener('click', event => {
         let pokeCard = document.createElement('div')
         pokeCard.className = 'col s3 cardDiv'
         let imgLink = res.data.cards[i].imageUrlHiRes
+        let cardSet = res.data.cards[i].set
+        let cardRarity = res.data.cards[i].rarity
         pokeCard.innerHTML = `
-        <img src="${imgLink}" class="pokeCard">`
+        <div class="pokeCardItem">
+          <img src="${imgLink}" class="pokeCard">
+          <div class="cardInfo">
+            <p class="cardRarity"><b>Rarity:</b> ${cardRarity}</p>
+            <p class="cardSet"><b>Card set:</b> ${cardSet}</p>
+          </div>
+        </div>
+        `
         document.getElementById('cardDisplay').prepend(pokeCard)
       }
 
-      pokeType = ''
+      document.getElementById('info').innerText = `Type: ${pokeType}`
+
+      document.getElementById('info').classList.remove('hide')
+
+      // clears text from typeInput
+      document.getElementById('typeInput').value = ''
+
       // end of .then
     })
     .catch(err => {
