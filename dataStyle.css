@@ -21,3 +21,7 @@
 .height {
   height: 100px;
 }
+
+.radius {
+   border-radius: 50px 50px 50px 50px;
+}
