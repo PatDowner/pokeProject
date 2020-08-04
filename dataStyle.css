@@ -13,3 +13,11 @@
 #center {
   margin-left: 100px;
 }
+
+.floatright {
+  float: right 500px;
+}
+
+.height {
+  height: 100px;
+}
