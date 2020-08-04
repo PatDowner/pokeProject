@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Search Pokecards</title>
   <!-- reset css -->
   <link rel="stylesheet" href="./assets/reset.css">
   <!-- Materialize CDN -->
@@ -14,19 +14,48 @@
 </head>
 
 <body>
+  <header class="valign-wrapper">Header matching landing page</header>
 
   <div class="row">
-    <div class="col s12">
-      Pokemon Name
-      <div class="input-field inline">
-        <input id="nameInput" type="text" class="validate">
-        <label for="nameInput">i.e. Pikachu</label>
-      </div>
-      <!-- This is our search button -->
-      <button id="search">search</button>
-    </div>
+    <div class="row searchBar">
 
-    <div id="cardDisplay" class="row"></div>
+      <!-- choose one way to search -->
+      <div id="srcBy" class="col s2">
+        Search by:
+      </div>
+
+
+      <!-- search by name -->
+      <div class="col s4">
+        Pokemon Name: 
+        <div class="input-field inline">
+          <input id="nameInput" type="text" class="validate">
+          <label for="nameInput">i.e. Pikachu</label>
+        </div>
+        <!-- This is our search button -->
+        <button id="searchName">search</button>
+      </div>
+
+
+      <!-- search by type -->
+      <div class="col s4">
+        Pokemon Type: 
+        <div class="input-field inline">
+          <input id="typeInput" type="text" class="validate">
+          <label for="typeInput">i.e. electric</label>
+        </div>
+        <!-- This is our search button -->
+        <button id="searchType">search</button>
+      </div>
+
+
+    </div>
+    <div id="info"></div>
+  </div>
+  <div class="row">
+    <div id="cardDisplay" class="col s12">
+      <!-- pokeCard populated here -->
+    </div>
   </div>
 
 
