@@ -11,7 +11,7 @@ document.getElementById('searchName').addEventListener('click', event => {
 
   // console.log the searched name
   console.log(document.getElementById('nameInput').value)
-  // console.log(res.data.cards[0].name)
+
 
   // name typed into searchName field
   let pokeName = document.getElementById('nameInput').value
@@ -26,14 +26,16 @@ document.getElementById('searchName').addEventListener('click', event => {
         let pokeCard = document.createElement('div')
         pokeCard.className = 'col s3 cardDiv'
         let imgLink = res.data.cards[i].imageUrlHiRes
-        let cardSet = res.data.cards[i].set
         let cardRarity = res.data.cards[i].rarity
+        let cardSet = res.data.cards[i].set
+        let cardSeries = res.data.cards[i].series
         pokeCard.innerHTML = `
         <div class="pokeCardItem">
           <img src="${imgLink}" class="pokeCard">
           <div class="cardInfo">
             <p class="cardRarity"><b>Rarity:</b> ${cardRarity}</p>
-            <p class="cardSet"><b>Card set:</b> ${cardSet}</p>
+            <p class="cardSeries"><b>Card Series:</b> ${cardSeries}</p>
+            <p class="cardSet"><b>Card Set:</b> ${cardSet}</p>
           </div>
         </div>
         `
@@ -92,7 +94,8 @@ document.getElementById('searchType').addEventListener('click', event => {
           <img src="${imgLink}" class="pokeCard">
           <div class="cardInfo">
             <p class="cardRarity"><b>Rarity:</b> ${cardRarity}</p>
-            <p class="cardSet"><b>Card set:</b> ${cardSet}</p>
+            <p class="cardSeries"><b>Card Series:</b> ${cardSeries}</p>
+            <p class="cardSet"><b>Card Set:</b> ${cardSet}</p>
           </div>
         </div>
         `
