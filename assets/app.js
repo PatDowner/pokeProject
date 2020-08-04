@@ -6,6 +6,9 @@
 document.getElementById('searchName').addEventListener('click', event => {
   event.preventDefault()
 
+  // clear the div from previous searches
+  document.getElementById('cardDisplay').innerHTML = ''
+
   // console.log the searched name
   console.log(document.getElementById('nameInput').value)
   // console.log(res.data.cards[0].name)
@@ -17,9 +20,6 @@ document.getElementById('searchName').addEventListener('click', event => {
     .then(res => {
 
       console.log(res.data.cards)
-
-      // // test
-      // console.log(res.data.cards[5].name)
 
 
       for (let i = 0; i < res.data.cards.length; i++) {
@@ -37,7 +37,7 @@ document.getElementById('searchName').addEventListener('click', event => {
           </div>
         </div>
         `
-        document.getElementById('cardDisplay').prepend(pokeCard)
+        document.getElementById('cardDisplay').append(pokeCard)
       }
 
       document.getElementById('info').innerText = `Pokemon: ${pokeName}`
@@ -61,6 +61,9 @@ document.getElementById('searchName').addEventListener('click', event => {
 // when you click the search type button
 document.getElementById('searchType').addEventListener('click', event => {
   event.preventDefault()
+
+  // clear the div from previous searches
+  document.getElementById('cardDisplay').innerHTML = ''
 
   // console.log the searched name
   console.log(document.getElementById('typeInput').value)
@@ -93,7 +96,7 @@ document.getElementById('searchType').addEventListener('click', event => {
           </div>
         </div>
         `
-        document.getElementById('cardDisplay').prepend(pokeCard)
+        document.getElementById('cardDisplay').append(pokeCard)
       }
 
       document.getElementById('info').innerText = `Type: ${pokeType}`
