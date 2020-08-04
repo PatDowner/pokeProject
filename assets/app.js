@@ -1,6 +1,4 @@
-// const getSearch = pokeName => {
-
-// }
+// I've got an issue with how the cards lay out in the columns. In some places the columns wrap in a way that makes sense. In other places it doesn't. Ideas of what's happening?? We can ask Q if needed.
 
 // when you click the search name button
 document.getElementById('searchName').addEventListener('click', event => {
@@ -61,6 +59,7 @@ document.getElementById('searchName').addEventListener('click', event => {
 
 
 // when you click the search type button
+// running into an issue where it's reaching the cap of 100 since there's so many of each type
 document.getElementById('searchType').addEventListener('click', event => {
   event.preventDefault()
 
