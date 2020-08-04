@@ -4,36 +4,47 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Search Pokecards</title>
+  <title>Pokecards Cards</title>
   <!-- reset css -->
   <link rel="stylesheet" href="./assets/reset.css">
   <!-- Materialize CDN -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <!-- my style guide -->
-  <link rel="stylesheet" href="./assets/style.css">
+  <link rel="stylesheet" href="./assets/cardSearch.css">
 </head>
 
 <body>
   <!-- place holder header, need to incorporate Brian's style -->
-  <header class="valign-wrapper blue">Header matching Brian's & Jamie's landing page</header>
+    <nav>
+      <div class="nav-wrapper blue darken-4">
+        <a href="index.html" class="brand-logo yellow-text"><i class="material-icons">home</i>Home</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a class="yellow-text" href="data.html">Pokemon Data</a></li>
+          <li><a class="yellow-text" href="cards.html">Pokemon Cards</a></li>
+          <li><a class="yellow-text" href="trivia.html">Pokemon Trivia</a></li>
+          <li><a class="yellow-text" href="resources.html"> Pokemon Resources</a></li>
+          <li><a class="yellow-text" href="aboutus.html">About us</a></li>
+        </ul>
+      </div>
+    </nav>
 
 
-  
-  <!-- Search bar: to search name and type -->
-  <div class="row searchBar valign-wrapper grey lighten-2">
 
-    <!-- choose one way to search -->
-    <div id="srcBy" class="col s2 yellow darken-2">
+    <!-- Search bar: to search name and type -->
+    <div class="row searchBar valign-wrapper blue lighten-2">
+
+      <!-- choose one way to search -->
+    <div id="srcBy" class="col s2 center-align yellow darken-2">
       Search by:
     </div>
-
+    
 
     <!-- search by name -->
     <div class="col s4">
       Pokemon Name:
       <div class="input-field inline">
-        <input id="nameInput" type="text" class="validate">
-        <label for="nameInput">i.e. Pikachu</label>
+        <input id="nameInput" type="text" class="validate blue lighten-1" placeholder="i.e. Pikachu">
+        <!-- <label for="nameInput">i.e. Pikachu</label> -->
       </div>
       <!-- This is our Name search button -->
       <button id="searchName">search</button>
@@ -44,44 +55,44 @@
     <div class="col s4">
       Pokemon Type:
       <div class="input-field inline">
-        <input id="typeInput" type="text" class="validate">
-        <label for="typeInput">i.e. electric</label>
+        <input id="typeInput" type="text" class="validate blue" placeholder="i.e. electric">
+        <!-- <label for="typeInput">i.e. electric</label> -->
       </div>
       <!-- This is our Type search button -->
       <button id="searchType">search</button>
     </div>
     <!-- end search bar -->
   </div>
-
+  
 
   <!-- info bar that gives some basic info about the pokemon -->
   <div class="row valign-wrapper teal lighten-2">
     <h3 id="info" class="hide">
       <!-- show name or type from search -->
     </h3>
-    </div>
+  </div>
   </div>
   
   
   <!-- Display of the cards that match search -->
-  <div class="row">
-    <div id="cardDisplay" class="col s12">
+  <div id="cardDisplay" class="row">
+    <!-- <div  class="col s12"> -->
       <!-- pokeCards are populated here -->
-    </div>
+    <!-- </div> -->
   </div>
 
+  
 
-
-
-
+  
+  
   <!-- Materialize Script -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-
+  
   <!-- This is the Axios CDN -->
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-
-  <script src="assets/app.js"></script>
-
+  
+  <script src="assets/cardSearch.js"></script>
+  
 </body>
 
 </html>

@@ -8,7 +8,7 @@ document.getElementById('searchName').addEventListener('click', event => {
   document.getElementById('cardDisplay').innerHTML = ''
 
   // console.log the searched name
-  console.log(document.getElementById('nameInput').value)
+  // console.log(document.getElementById('nameInput').value)
 
 
   // name typed into searchName field
