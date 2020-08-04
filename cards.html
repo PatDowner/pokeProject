@@ -10,22 +10,31 @@
   <!-- Materialize CDN -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  
+
   <!-- my style guide -->
   <link rel="stylesheet" href="./assets/cards.css">
 </head>
 
 <body>
-  <!-- place holder header, need to incorporate Brian's style -->
+<!-- nav bar -->
   <nav>
     <div class="nav-wrapper blue darken-4">
       <a href="index.html" class="brand-logo yellow-text"><i class="material-icons">home</i>Home</a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
         <li><a class="yellow-text" href="data.html">Pokemon Data</a></li>
         <li><a class="yellow-text" href="cards.html">Pokemon Cards</a></li>
         <li><a class="yellow-text" href="trivia.html">Pokemon Trivia</a></li>
-        <li><a class="yellow-text" href="resources.html"> Pokemon Resources</a></li>
-        <li><a class="yellow-text" href="aboutus.html">About us</a></li>
+        <li><a class="yellow-text" href="resources.html">Pokemon Resources</a></li>
+        <li><a class="yellow-text" href="aboutus.html">About Us</a></li>
+      </ul>
+
+      <ul class="sidenav" id="mobile-demo">
+        <li><a class="yellow-text" href="data.html">Pokemon Data</a></li>
+        <li><a class="yellow-text" href="cards.html">Pokemon Cards</a></li>
+        <li><a class="yellow-text" href="trivia.html">Pokemon Trivia</a></li>
+        <li><a class="yellow-text" href="resources.html">Pokemon Resources</a></li>
+        <li><a class="yellow-text" href="aboutus.html">About Us</a></li>
       </ul>
     </div>
   </nav>
@@ -73,7 +82,6 @@
       <!-- show name or type from search -->
     </h3>
   </section>
-
 
   <section id="cardLanding" class="row">
     <!-- background image on left -->
