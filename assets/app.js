@@ -27,8 +27,8 @@ document.getElementById('searchName').addEventListener('click', event => {
         pokeCard.className = 'col s3 cardDiv'
         let imgLink = res.data.cards[i].imageUrlHiRes
         let cardRarity = res.data.cards[i].rarity
-        let cardSet = res.data.cards[i].set
         let cardSeries = res.data.cards[i].series
+        let cardSet = res.data.cards[i].set
         pokeCard.innerHTML = `
         <div class="pokeCardItem">
           <img src="${imgLink}" class="pokeCard">
@@ -88,6 +88,7 @@ document.getElementById('searchType').addEventListener('click', event => {
         pokeCard.className = 'col s3 cardDiv'
         let imgLink = res.data.cards[i].imageUrlHiRes
         let cardSet = res.data.cards[i].set
+        let cardSeries = res.data.cards[i].series
         let cardRarity = res.data.cards[i].rarity
         pokeCard.innerHTML = `
         <div class="pokeCardItem">
