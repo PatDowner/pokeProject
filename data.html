@@ -7,7 +7,6 @@
     <title>Resources</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!-- <link rel="stylesheet" href="./dataStyle.css"> -->
 
     <style>
         body {
@@ -34,12 +33,21 @@
     <nav>
         <div class="nav-wrapper blue darken-4">
             <a href="index.html" class="brand-logo yellow-text"><i class="material-icons">home</i>Home</a>
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
                 <li><a class="yellow-text" href="data.html">Pokemon Data</a></li>
                 <li><a class="yellow-text" href="cards.html">Pokemon Cards</a></li>
                 <li><a class="yellow-text" href="trivia.html">Pokemon Trivia</a></li>
-                <li><a class="yellow-text" href="resources.html"> Pokemon Resources</a></li>
-                <li><a class="yellow-text" href="aboutus.html">About us</a></li>
+                <li><a class="yellow-text" href="resources.html">Pokemon Resources</a></li>
+                <li><a class="yellow-text" href="aboutus.html">About Us</a></li>
+            </ul>
+
+            <ul class="sidenav" id="mobile-demo">
+                <li><a class="yellow-text" href="data.html">Pokemon Data</a></li>
+                <li><a class="yellow-text" href="cards.html">Pokemon Cards</a></li>
+                <li><a class="yellow-text" href="trivia.html">Pokemon Trivia</a></li>
+                <li><a class="yellow-text" href="resources.html">Pokemon Resources</a></li>
+                <li><a class="yellow-text" href="aboutus.html">About Us</a></li>
             </ul>
         </div>
     </nav>
@@ -78,14 +86,12 @@
         <div id="firstCard" class="col s12 l3">
             <div id="test" class="card yellow darken-1">
                 <div id="pokemonPicture" class="card-image">
-                
+                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png" alt="pokeball">
                 </div>
                 <div id="pokemonInfo" class="card-content">
                     
                 </div>
-                <div class="card-action">
-                    <!-- <a href="#">This is a link</a> -->
-                </div>
+              
             </div>
         </div>
 
@@ -93,16 +99,16 @@
         <div class="col s12 l9">
             <div class="row">
                 <div class="card yellow darken-1">
+                    <span class="card-title white-text">Pokemon Stats:</span>
                     <div id="pokemonStats" class="card-content white-text">
-                        <span class="card-title">Pokemon Stats</span>
                     </div>
                     
                 </div>
             </div>
             <div class="row">
                 <div class="card yellow darken-1">
+                    <span class="card-title white-text">Abilities:</span>
                     <div id="abilities" class="card-content white-text">
-                        <span class="card-title">Abilities</span>
                         
                     </div>
                 </div>
@@ -118,16 +124,6 @@
         
 </div>
     
-
-
-    <p id="results"></p>
-    <p id="stats"></p>
-    <!-- <p id="abilities"></p> -->
-
-
-
-
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 
     <footer class="page-footer blue darken-4">
