@@ -7,7 +7,7 @@
     <title>Resources</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="./dataStyle.css">
+    <!-- <link rel="stylesheet" href="./dataStyle.css"> -->
 
     <style>
         body {
@@ -54,25 +54,28 @@
     <!-- Page Layout here -->
 
     <!-- Search Bar -->
-    <div class="background row position z-depth-2">
-        <form class="col s12 ">
-            <div class="row">
-                <div class="input-field col s12">
-                    <label for="icon_prefix2">Enter Pokemon Name</label>
-                    <input id="pokemon" type="text" class="validate">
-                    <button id="searchPokemon" class="btn-floating btn-large waves-effect waves-light red">GO</button>
-                </div>
-            </div>
-        </form>
-    </div>
+    <div class="container">
 
+        <div class="background row position">
+            <form class="col s12 ">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <label for="icon_prefix2">Enter Pokemon Name</label>
+                        <input id="pokemon" type="text" class="validate">
+                        <button id="searchPokemon" class="btn-floating btn-large waves-effect waves-light red">GO</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+        
 
 
 
 <div class="container">
 
     <div class="row">
-        <div class="col s3">
+        <div id="firstCard" class="col s12 l3">
             <div id="test" class="card yellow darken-1">
                 <div id="pokemonPicture" class="card-image">
                 
@@ -87,7 +90,7 @@
         </div>
 
         
-        <div class="col m9">
+        <div class="col s12 l9">
             <div class="row">
                 <div class="card yellow darken-1">
                     <div id="pokemonStats" class="card-content white-text">

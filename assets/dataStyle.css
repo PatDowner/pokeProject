@@ -1,5 +1,5 @@
 .normal {
-background-color: grey;
+  background-color: grey;
 }
 
 .fire {
@@ -70,3 +70,20 @@ background-color: grey;
 .poison {
   background-color: rgb(101, 56, 101);
 }
+
+.position {
+  margin-top: 100px;
+  /* margin-left: 450px;
+  margin-right: 500px; */
+  background-color: rgb(218, 173, 77);
+  border-radius: 50px 50px 50px 50px;
+}
+
+.left {
+  margin-left: 100px;
+}
+
+#firstCard {
+  text-align: center;
+}
+
