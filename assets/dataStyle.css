@@ -73,8 +73,6 @@
 
 .position {
   margin-top: 10%;
-  /* margin-left: 450px;
-  margin-right: 500px; */
   background-color: rgb(218, 173, 77);
   border-radius: 50px 50px 50px 50px;
 }
@@ -86,7 +84,11 @@
 #firstCard {
   text-align: center;
   display: block;
+  /* width: 100%; */
   margin-left: auto;
   margin-right: auto;
 }
 
+#pokeName {
+  text-transform: uppercase;
+}
