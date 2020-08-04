@@ -4,6 +4,10 @@
 document.getElementById('searchName').addEventListener('click', event => {
   event.preventDefault()
 
+  // swap out landing images with cards from search result
+  document.getElementById('cardLanding').classList.add('hide')
+  document.getElementById('cardDisplay').classList.remove('hide')
+
   // clear the div from previous searches
   document.getElementById('cardDisplay').innerHTML = ''
 
@@ -62,6 +66,10 @@ document.getElementById('searchName').addEventListener('click', event => {
 // running into an issue where it's reaching the cap of 100 since there's so many of each type
 document.getElementById('searchType').addEventListener('click', event => {
   event.preventDefault()
+
+  // swap out landing images with cards from search result
+  document.getElementById('cardLanding').classList.add('hide')
+  document.getElementById('cardDisplay').classList.remove('hide')
 
   // clear the div from previous searches
   document.getElementById('cardDisplay').innerHTML = ''
