@@ -38,7 +38,8 @@ axios.get(`https://api.pokemontcg.io/v1/cards`)
           <p id="cardSet"><b>Card Set:</b> ${cardSet}</p>
         </div>
       `
-
+      let elems = document.querySelectorAll('.materialboxed')
+      let instances = M.Materialbox.init(elems)
       // console.log(randomCard)
 
       // put that randomCard div into the div with id='randomDisplay' in the HTML file.
@@ -139,8 +140,15 @@ const searchClicked = (x) => {
       // reveals that info bar (was hidden pre-search)
       document.getElementById('info').classList.remove('hide')
 
-      // clears text from nameInput
-      document.getElementById(`input${whichSearch}`).value = ''
+      if (whichSearch === 'Name') {
+        // clears text from inputName
+        document.getElementById(`input${whichSearch}`).value = ''
+
+      } else if (whichSearch === 'Type') {
+        // resets the type dropdown to the first/default option.
+        document.getElementById(`input${whichSearch}`).value = 'Choose your option'
+      }
+
 
       // end of .then
     })
