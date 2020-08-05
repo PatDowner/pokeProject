@@ -8,22 +8,37 @@
 // Randomized cards at landing screen
 axios.get(`https://api.pokemontcg.io/v1/cards`)
   .then(res => {
+    // function that will randomize the res.data.cards array
+    function shuffle(a) {
+      var j, x, i;
+      for (i = a.length - 1; i > 0; i--) {
+        j = Math.floor(Math.random() * (i + 1));
+        x = a[i];
+        a[i] = a[j];
+        a[j] = x;
+      }
+      return a;
+    }
+
+    // run the function to tell it to shuffle the res.data.cards array and call it shuffledArray
+    let shuffledArray = shuffle(res.data.cards)
+
     // this is for getting a random card, repeat 3 times for landing image
     for (let i = 0; i < 6; i++) {
       // make a div for each card
       let randomCard = document.createElement('div')
 
       // finds a random position number (n) in the API array of cards
-      let n = Math.floor(Math.random() * res.data.cards.length)
+      // let n = Math.floor(Math.random() * shuffledArray.length)
 
       // sets column width and gives it a class for styling purposes
       randomCard.className = 'col s12 m6 l4 cardDiv'
 
       // gets the image link and some other info specific to that card
-      let imgLink = res.data.cards[n].imageUrlHiRes
-      let cardRarity = res.data.cards[n].rarity
-      let cardSeries = res.data.cards[n].series
-      let cardSet = res.data.cards[n].set
+      let imgLink = shuffledArray[i].imageUrlHiRes
+      let cardRarity = shuffledArray[i].rarity
+      let cardSeries = shuffledArray[i].series
+      let cardSet = shuffledArray[i].set
 
       // res.data.cards[n].open(originalWidth)
       // res.data.cards[n].open(originalHeight)
@@ -88,6 +103,21 @@ const searchClicked = (x) => {
   // actual API pull using the correct API link as defined in the if statement above
   axios.get(apiURL)
     .then(res => {
+      // function that will randomize the res.data.cards array
+      function shuffle(a) {
+        var j, x, i;
+        for (i = a.length - 1; i > 0; i--) {
+          j = Math.floor(Math.random() * (i + 1));
+          x = a[i];
+          a[i] = a[j];
+          a[j] = x;
+        }
+        return a;
+      }
+
+      // run the function to tell it to shuffle the res.data.cards array and call it shuffledArray
+      let shuffledArray = shuffle(res.data.cards)
+
       // console logs the array we're working with
       console.log(res.data.cards)
 
@@ -102,10 +132,10 @@ const searchClicked = (x) => {
         pokeCard.className = 'col s12 m6 l4 xl3 cardDiv'
 
         // gets the image link and some other info specific to that card
-        let imgLink = res.data.cards[i].imageUrlHiRes
-        let cardRarity = res.data.cards[i].rarity
-        let cardSeries = res.data.cards[i].series
-        let cardSet = res.data.cards[i].set
+        let imgLink = shuffledArray[i].imageUrlHiRes
+        let cardRarity = shuffledArray[i].rarity
+        let cardSeries = shuffledArray[i].series
+        let cardSet = shuffledArray[i].set
 
         // image of the card is pokeCard class
         // the specific info about the card is cardInfo class
