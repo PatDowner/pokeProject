@@ -40,6 +40,10 @@ h3 {
   display: none;
 }
 
+.sidePokeImage {
+  padding: 0px;
+}
+
 .cardDiv {
   padding: 0px;
   margin: 0px;
