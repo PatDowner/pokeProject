@@ -162,6 +162,7 @@ const searchClicked = (x) => {
       // determines what shows up in the teal info bar that pops up after the search.
       if (whichSearch === 'Name') {
         infoText = `Pokemon: ${pokeSearch}`
+        document.getElementById('typeNote').classList.add('hide')
       } else if (whichSearch === 'Type') {
         infoText = `Type: ${pokeSearch}`
         document.getElementById('typeNote').classList.remove('hide')
