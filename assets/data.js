@@ -65,7 +65,7 @@ const getPokemon = pokemon => {
 
 
       $('#pokemonStats').html(`
-        <p>Stats:
+        <p class="statNames">Stats:
         <br>
         Base: ${result.stats[0].stat.name}: ${result.stats[0].base_stat} <br>
         Base: ${result.stats[1].stat.name}: ${result.stats[1].base_stat} <br> 
@@ -87,7 +87,7 @@ const getPokemon = pokemon => {
             console.log(res)
             console.log(res.effect_entries[1].effect)
 
-            $('#abilities').append(`<p>${res.name}: ${res.effect_entries[1].effect}</p><br>`)
+            $('#abilities').append(`<p> <span class="abilityName">${res.name}</span>: ${res.effect_entries[1].effect}</p><br>`)
 
           })
           .catch(err => {
