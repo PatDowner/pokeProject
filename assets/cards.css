@@ -15,8 +15,9 @@ body {
 /* for whole search bar (reminder: color set via classes */
 
 .searchBar {
-  margin-top: 20px;
+  margin-top: 10%;
   height: 60px;
+  padding-left: 0px;
 }
 
 /* head for search bar ("Search by:"). reminder: color set via classes */
@@ -24,8 +25,10 @@ body {
 #srcBy {
   font-size: 30px;
   height: 100%;
-  padding-top: 15px;
+  /* padding-top: 15px;
   padding-bottom: 15px;
+  padding-left: 0px; */
+
 }
 
 /* formats input fields in search bar reminder: color background color set via classes */
@@ -37,6 +40,11 @@ body {
   width: 150px;
 }
 
+/* #searchName {
+  /* width: 20%; */
+  /* display: block
+} */ 
+
 
 
 /* This is for stuff that's visible on page before the first search */
@@ -46,6 +54,10 @@ body {
   justify-content: space-around;
 }
 
+.yellow {
+  padding: 0px;
+  height: 20px;
+}
 
 /* Put anything that formats search results below this line */
 
