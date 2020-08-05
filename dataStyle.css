@@ -1,0 +1,49 @@
+.position {
+  margin-top: 100px;
+  margin-left: 450px; 
+  margin-right: 500px;
+  background-color: rgb(218, 173, 77);
+  border-radius: 50px 50px 50px 50px;
+}
+
+.left {
+  margin-left: 100px;
+}
+
+#center {
+  margin-left: 100px;
+}
+
+.floatright {
+  float: right 500px;
+}
+
+.height {
+  height: 100px;
+}
+
+.radius {
+   border-radius: 50px 50px 50px 50px;
+}
+
+#abilities {
+  font-style: italic;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size-adjust: initial;
+  font-weight: 600;
+}
+
+#pokemonStats {
+  font-style: italic;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size-adjust: initial;
+  font-weight: 600;
+ 
+}
+
+#pokemonInfo {
+  font-style: italic;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size-adjust: initial;
+  font-weight: 600;;
+}
