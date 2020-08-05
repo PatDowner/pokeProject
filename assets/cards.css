@@ -31,12 +31,10 @@ body {
 /* formats input fields in search bar reminder: color background color set via classes */
 
 #inputName {
-  text-transform: capitalize;
   border: 1px solid lightgray;
   margin-top: 15px;
   padding-left: 12px;
   width: 150px;
-  color: black
 }
 
 /* This is for stuff that's visible on page before the first search */
