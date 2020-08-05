@@ -1,11 +1,35 @@
 // I've got an issue with how the cards lay out in the columns. In some places the columns wrap in a way that makes sense. In other places it doesn't. Ideas of what's happening?? We can ask Q if needed.
 
-
-
+// functionality for carousel
 document.addEventListener('DOMContentLoaded', function () {
-  var elems = document.querySelectorAll('.carousel')
-  var instances = M.Carousel.init(elems)
+  let elems = document.querySelectorAll('.carousel')
+  let instances = M.Carousel.init(elems)
 })
+
+axios.get(`https://api.pokemontcg.io/v1/cards`)
+  .then(res => {
+    // this is for getting a random card in carousel
+    for (let i = 0; i < 5; i++) {
+      let randomCard = document.createElement('a')
+
+      let x = Math.floor(Math.random() * res.data.cards.length)
+
+      randomCard.className = 'carousel-item'
+
+      let imgLink = res.data.cards[x].imageUrlHiRes
+      randomCard.innerHTML = `<img src="${imgLink}" class="randomCard">`
+
+      console.log(randomCard)
+      document.getElementById('carouselCol').append(randomCard)
+    }
+  })
+  .catch(err => {
+    console.log(err)
+  })
+
+
+
+
 
 
 
