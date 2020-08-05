@@ -31,6 +31,7 @@ body {
 /* formats input fields in search bar reminder: color background color set via classes */
 
 #nameInput, #typeInput {
+  text-transform: capitalize;
   border: 1px solid lightgray;
   margin-top: 15px;
   padding-left: 12px;
@@ -39,72 +40,47 @@ body {
 
 /* This is for stuff that's visible on page before the first search */
 
-/* settings for the left/right stacks of pokemon images used in the landing display of this screen */
-
-.sidePokeImage {
+#randomDisplay {
   padding: 0px;
-  width: 100%;
 }
 
-.randomDisplay {
-  /* object-fit: fill;
-  height: 300px; */
-  /* padding-top: 140%;
-  position: relative;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-   */
-}
-
-/* .randomCardItem {
-  
-} */
 .randomCard {
-  /* width: 100%; */
   height: 300px;
-  /* object-fit: fill; */
-  /* height: min-content; */
-  /* min-width: 145; */
-  /* min-height: 200px; */
-  /* display: inline-block; */
-  /* padding: 0px; */
-  /* margin: 0px 50px; */
 }
 
 /* Put anything that formats search results below this line */
 
 /* for text in teal bar */
 
-h3 {
-  margin: 20px;
-  margin-left: 22.5px;
+#info {
+  text-transform: capitalize;
+  margin: 15px;
+  margin-right: 0px;
+  font-size: 40px;
+}
+
+#typeNote {
+  padding: 27px;
+  margin-left: -15px;
+  text-align: right;
 }
 
 /* the div that wraps all the way around cards and their info box. This was just to remove some extra space around search results */
 
+#cardDisplay {
+  margin-left: 5px;
+}
 .cardDiv {
   padding: 0px;
   margin: 0px;
 }
 
-/* this is what wraps all the way around the card and its description */
-
-/* .pokeCardItem {
-  margin-bottom: 20px;
-  height: 475px;
-} */
-
 /* controls the image of the card itself */
 
 .pokeCard {
-  /* width: 100%; */
-  height: 400px;
+  height: 375px;
   display: inline-block;
   padding: 0px;
-  border: 1px solid lightslategray;
-  /* border-bottom: 1px solid lightslategray; */
 }
 
 /* controls the info boxes directly below the cards */
@@ -112,4 +88,5 @@ h3 {
 .cardInfo {
   padding: 10px;
   color: aliceblue;
+  margin-bottom: 20px;
 }

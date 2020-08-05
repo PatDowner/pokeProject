@@ -1,27 +1,60 @@
-// I've got an issue with how the cards lay out in the columns. In some places the columns wrap in a way that makes sense. In other places it doesn't. Ideas of what's happening?? We can ask Q if needed.
+
+
+// First is what happens when the page loads/reloads, then below that is what happens when a search button is clicked.
+
+
 
 
 // Randomized cards at landing screen
 axios.get(`https://api.pokemontcg.io/v1/cards`)
   .then(res => {
-    // this is for getting a random card
-    for (let i = 0; i < 3; i++) {
+    // this is for getting a random card, repeat 3 times for landing image
+    for (let i = 0; i < 6; i++) {
+      // make a div for each card
       let randomCard = document.createElement('div')
 
-      let x = Math.floor(Math.random() * res.data.cards.length)
+      // finds a random position number (n) in the API array of cards
+      let n = Math.floor(Math.random() * res.data.cards.length)
 
-      randomCard.className = 'col s4 randomCardItem'
+      // sets column width and gives it a class for styling purposes
+      randomCard.className = 'col s12 l4 pokeCardItem'
 
-      let imgLink = res.data.cards[x].imageUrlHiRes
-      randomCard.innerHTML = `<img src="${imgLink}" class="randomCard>`
+      // gets the image link and some other info specific to that card
+      let imgLink = res.data.cards[n].imageUrlHiRes
+      let cardRarity = res.data.cards[n].rarity
+      let cardSeries = res.data.cards[n].series
+      let cardSet = res.data.cards[n].set
 
-      console.log(randomCard)
+
+      // puts all of those things into a single displayed pokeCardItem div
+      // image of the card is pokeCard class
+      // the specific info about the card is cardInfo class
+      randomCard.innerHTML = `
+        <img src="${imgLink}" class="randomCard">
+        <div class="cardInfo">
+          <p id="cardRarity"><b>Rarity:</b> ${cardRarity}</p>
+          <p id="cardSeries"><b>Card Series:</b> ${cardSeries}</p>
+          <p id="cardSet"><b>Card Set:</b> ${cardSet}</p>
+        </div>
+      `
+
+      // console.log(randomCard)
+
+      // put that randomCard div into the div with id='randomDisplay' in the HTML file.
       document.getElementById('randomDisplay').append(randomCard)
     }
   })
   .catch(err => {
     console.log(err)
   })
+
+
+
+
+// Everything after this is executed once a search button is clicked
+
+
+
 
 // variable that makes the function searchClicked() work
 let whichSearch = ''
@@ -63,8 +96,8 @@ const searchClicked = (x) => {
         // makes a div for each pokeCard
         let pokeCard = document.createElement('div')
 
-        // sets the column width of the div as well as gives it the cardDiv class for styling purposes
-        pokeCard.className = 'col s12 l3 cardDiv'
+        // sets the column width of the div as well as gives it a class for styling purposes
+        pokeCard.className = 'col s12 m6 l4 xl3 cardDiv'
 
         // gets the image link and some other info specific to that card
         let imgLink = res.data.cards[i].imageUrlHiRes
@@ -72,23 +105,20 @@ const searchClicked = (x) => {
         let cardSeries = res.data.cards[i].series
         let cardSet = res.data.cards[i].set
 
-        // puts all of those things into a single displayed pokeCardItem div. Note: the reason this is a separate div inside the cardDiv is that having a pokeCardItem div allows us to style a border around this stuff w/o being the full width of the column.
         // image of the card is pokeCard class
         // the specific info about the card is cardInfo class
         pokeCard.innerHTML = `
-        <div class="pokeCardItem">
           <img src="${imgLink}" class="pokeCard">
           <div class="cardInfo">
             <p id="cardRarity"><b>Rarity:</b> ${cardRarity}</p>
             <p id="cardSeries"><b>Card Series:</b> ${cardSeries}</p>
             <p id="cardSet"><b>Card Set:</b> ${cardSet}</p>
           </div>
-        </div>
         `
 
         // put that pokeCard div into the div with id='cardDisplay' in the HTML file.
         document.getElementById('cardDisplay').append(pokeCard)
-      // end loop
+        // end loop
       }
 
       // variable to make if statement work
@@ -99,6 +129,7 @@ const searchClicked = (x) => {
         infoText = `Pokemon: ${pokeSearch}`
       } else if (whichSearch === 'Type') {
         infoText = `Type: ${pokeSearch}`
+        document.getElementById('typeNote').classList.remove('hide')
       }
 
       // populates that teal info bar

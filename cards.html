@@ -76,30 +76,32 @@
 
 
   <!-- teal info bar that gives some basic info about the pokemon -->
-  <section class="row valign-wrapper teal lighten-2">
-    <h3 id="info" class="hide">
+  <div class="row teal lighten-2 info">
+    <div id="info" class="col s12 l6 hide">
       <!-- show name or type from search -->
-    </h3>
-  </section>
-
-  <!-- this test div was to try out the random card pull -->
-  <!-- <div id="test"></div> -->
+    </div>
+    <div id='typeNote' class="col s12 m6 hide">
+      (Note: Searching by type shows 100 random cards of that type.)
+    </div>
+  </div>
 
 
   <!-- section that appears before searching for a card -->
   <section id="cardLanding" class="row">
     <!-- background image on left -->
-    <div class="col s2 center-align sidePokeImage">
+    <div class="col s2 center-align">
+      <img src="./assets/Images/cardsSideImage.png">
       <img src="./assets/Images/cardsSideImage.png">
     </div>
 
     <!-- random card center -->
-<div id="randomDisplay" class="col s8 center-align">
-  <!-- random cards go here -->
-</div>
+    <div id="randomDisplay" class="col s8 center-align">
+      <!-- random cards go here -->
+    </div>
 
     <!-- background image on left -->
     <div class="col s2 center-align sidePokeImage">
+      <img src="./assets/Images/cardsSideImage.png">
       <img src="./assets/Images/cardsSideImage.png">
     </div>
   </section>
