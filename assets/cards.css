@@ -18,10 +18,15 @@ header {
   border: 1px solid lightgray;
   margin-top: 15px;
   padding-left: 12px;
-  width: 150px; 
+  width: 50%;
   /* color: black; */
 }
 
+#searchName, #searchType {
+  margin-top: 10px;
+  padding-left: 7px;
+  width: 25%;
+}
 
 #srcBy {
   font-size: 30px;
@@ -29,7 +34,6 @@ header {
   padding-top: 15px;
   padding-bottom: 15px;
 }
-
 
 h3 {
   margin: 20px;
@@ -59,7 +63,7 @@ h3 {
   /* height: 475px; */
 }
 
-.cardInfo{
+.cardInfo {
   padding: 10px;
   color: aliceblue;
 }
