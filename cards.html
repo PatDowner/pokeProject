@@ -15,7 +15,7 @@
 </head>
 
 <body>
-<!-- nav bar -->
+  <!-- nav bar -->
   <nav>
     <div class="nav-wrapper blue darken-4">
       <a href="index.html" class="brand-logo yellow-text"><i class="material-icons">home</i>Home</a>
@@ -41,13 +41,13 @@
 
 
   <!-- Search bar: to search name and type -->
-  <div class="row searchBar valign-wrapper blue lighten-2">
+  <section class="row searchBar valign-wrapper blue lighten-2">
 
-      <!-- choose one way to search -->
+    <!-- choose one way to search -->
     <div id="srcBy" class="col s12 l2 center-align yellow lighten-1">
       Search by:
     </div>
-    
+
 
     <!-- search by name -->
     <div class="col s8 md8">
@@ -72,8 +72,8 @@
       <button id="searchType">search</button>
     </div>
     <!-- end search bar -->
-  </div>
-  
+  </section>
+
 
   <!-- teal info bar that gives some basic info about the pokemon -->
   <section class="row valign-wrapper teal lighten-2">
@@ -82,6 +82,7 @@
     </h3>
   </section>
 
+  <!-- section that appears before searching for a card -->
   <section id="cardLanding" class="row">
     <!-- background image on left -->
     <div class="col s2 sidePokeImage">
@@ -89,7 +90,10 @@
     </div>
 
     <!-- carousel center -->
-    <div id="carouselCol" class="col s6 carousel">
+    <!-- <div class="col s6 white-text">
+      text and text
+    </div> -->
+    <div id="carouselCol" class="col s7 carousel">
       <a class="carousel-item" href="#one!"><img src="https://mocah.org/uploads/posts/192091-pikachu-2560x1600.png"></a>
       <a class="carousel-item" href="#two!"><img src="https://cdn.wallpapersafari.com/43/65/FG7EmQ.jpg"></a>
       <a class="carousel-item" href="#three!"><img
@@ -107,24 +111,24 @@
   </section>
 
   <!-- Display of the cards that match search -->
-  <div id="cardDisplay" class="row hide">
+  <section id="cardDisplay" class="row hide">
     <!-- <div  class="col s12"> -->
-      <!-- pokeCards are populated here -->
+    <!-- pokeCards are populated here -->
     <!-- </div> -->
-  </div>
+  </section>
 
-  
 
-  
-  
+
+
+
   <!-- Materialize Script -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  
+
   <!-- This is the Axios CDN -->
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-  
+
   <script src="assets/cards.js"></script>
-  
+
 </body>
 
 </html>

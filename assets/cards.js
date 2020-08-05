@@ -1,5 +1,16 @@
 // I've got an issue with how the cards lay out in the columns. In some places the columns wrap in a way that makes sense. In other places it doesn't. Ideas of what's happening?? We can ask Q if needed.
 
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  var elems = document.querySelectorAll('.carousel')
+  var instances = M.Carousel.init(elems)
+})
+
+
+
+
+
 // when you click the search name button
 document.getElementById('searchName').addEventListener('click', event => {
   event.preventDefault()
