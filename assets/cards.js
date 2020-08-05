@@ -17,7 +17,7 @@ axios.get(`https://api.pokemontcg.io/v1/cards`)
       let n = Math.floor(Math.random() * res.data.cards.length)
 
       // sets column width and gives it a class for styling purposes
-      randomCard.className = 'col s12 l4 pokeCardItem'
+      randomCard.className = 'col s12 m6 l4 cardDiv'
 
       // gets the image link and some other info specific to that card
       let imgLink = res.data.cards[n].imageUrlHiRes
@@ -25,12 +25,13 @@ axios.get(`https://api.pokemontcg.io/v1/cards`)
       let cardSeries = res.data.cards[n].series
       let cardSet = res.data.cards[n].set
 
-
+      // res.data.cards[n].open(originalWidth)
+      // res.data.cards[n].open(originalHeight)
       // puts all of those things into a single displayed pokeCardItem div
       // image of the card is pokeCard class
       // the specific info about the card is cardInfo class
       randomCard.innerHTML = `
-        <img src="${imgLink}" class="randomCard">
+        <img class="materialboxed" height="290" src="${imgLink}">
         <div class="cardInfo">
           <p id="cardRarity"><b>Rarity:</b> ${cardRarity}</p>
           <p id="cardSeries"><b>Card Series:</b> ${cardSeries}</p>
@@ -166,4 +167,16 @@ document.getElementById('searchType').addEventListener('click', event => {
   event.preventDefault()
   whichSearch = 'Type'
   searchClicked(whichSearch)
+})
+
+// there to make the dropdown in search bar work (taken from materialize)
+document.addEventListener('DOMContentLoaded', function () {
+  let elems = document.querySelectorAll('select')
+  let instances = M.FormSelect.init(elems)
+})
+
+// there to make the card sizes zoom in on click (material box from materialize)
+document.addEventListener('DOMContentLoaded', function () {
+  let elems = document.querySelectorAll('.materialboxed')
+  let instances = M.Materialbox.init(elems)
 })

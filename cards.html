@@ -53,7 +53,7 @@
     <div class="col s8 md8">
       Pokemon Name:
       <div class="input-field inline">
-        <input id="inputName" type="text" class="validate blue lighten-1" placeholder="i.e. Pikachu">
+        <input id="inputName" type="text" class="validate blue lighten-1" placeholder="i.e. Pikachu" autofocus>
         <!-- <label for="nameInput">i.e. Pikachu</label> -->
       </div>
       <!-- This is our Name search button -->
@@ -64,15 +64,36 @@
     <!-- search by type -->
     <div class="col s10 md8">
       Pokemon Type:
+      <!-- search by type drop down -->
       <div class="input-field inline">
-        <input id="inputType" type="text" class="validate blue lighten-1" placeholder="i.e. electric">
+        <select id="inputType" name="pokemonType" class="browser-default blue lighten-1">
+          <option value="Choose your option" disabled selected>Choose a type</option>
+          <option value="Colorless">Colorless</option>
+          <option value="Darkness">Dark</option>
+          <option value="Dragon">Dragon</option>
+          <option value="Lightning">Electric</option>
+          <option value="Fairy">Fairy</option>
+          <option value="Fighting">Fighting</option>
+          <option value="Fire">Fire</option>
+          <option value="Grass">Grass</option>
+          <option value="Metal">Metal</option>
+          <option value="Psychic">Psychic</option>
+          <option value="Water">Water</option>
+        </select>
+        <!-- <input id="inputType" type="text" class="validate blue lighten-1" placeholder="i.e. electric"> -->
         <!-- <label for="typeInput">i.e. electric</label> -->
       </div>
       <!-- This is our Type search button -->
       <button id="searchType">search</button>
     </div>
+
+
+
     <!-- end search bar -->
   </section>
+
+  
+    
 
 
   <!-- teal info bar that gives some basic info about the pokemon -->
@@ -89,7 +110,7 @@
   <!-- section that appears before searching for a card -->
   <section id="cardLanding" class="row">
     <!-- background image on left -->
-    <div class="col s2 center-align">
+    <div class="col s2 left-align hide-on-small-only">
       <img src="./assets/Images/cardsSideImage.png">
       <img src="./assets/Images/cardsSideImage.png">
     </div>
@@ -100,7 +121,7 @@
     </div>
 
     <!-- background image on left -->
-    <div class="col s2 center-align sidePokeImage">
+    <div class="col s2 right-align">
       <img src="./assets/Images/cardsSideImage.png">
       <img src="./assets/Images/cardsSideImage.png">
     </div>
@@ -108,9 +129,7 @@
 
   <!-- Display of the cards that match search -->
   <section id="cardDisplay" class="row hide">
-    <!-- <div  class="col s12"> -->
     <!-- pokeCards are populated here -->
-    <!-- </div> -->
   </section>
 
 

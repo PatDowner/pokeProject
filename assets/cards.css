@@ -30,22 +30,26 @@ body {
 
 /* formats input fields in search bar reminder: color background color set via classes */
 
-#nameInput, #typeInput {
+#inputName {
   text-transform: capitalize;
   border: 1px solid lightgray;
   margin-top: 15px;
   padding-left: 12px;
   width: 150px;
+  color: black
 }
 
 /* This is for stuff that's visible on page before the first search */
 
 #randomDisplay {
   padding: 0px;
+  justify-content: space-around;
 }
 
 .randomCard {
-  height: 300px;
+  /* height: 290px; */
+  /* display: inline-block; */
+  /* padding: 0px; */
 }
 
 /* Put anything that formats search results below this line */
@@ -70,6 +74,7 @@ body {
 #cardDisplay {
   margin-left: 5px;
 }
+
 .cardDiv {
   padding: 0px;
   margin: 0px;
@@ -86,7 +91,10 @@ body {
 /* controls the info boxes directly below the cards */
 
 .cardInfo {
-  padding: 10px;
+  height: 60px;
+  padding: 5px;
   color: aliceblue;
   margin-bottom: 20px;
+  line-height: 115%;
+  text-align: left;
 }
