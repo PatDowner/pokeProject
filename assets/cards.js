@@ -110,13 +110,16 @@ const searchClicked = (x) => {
         // image of the card is pokeCard class
         // the specific info about the card is cardInfo class
         pokeCard.innerHTML = `
-          <img src="${imgLink}" class="pokeCard">
+          <img class="materialboxed" height="290" src="${imgLink}" class="pokeCard">
           <div class="cardInfo">
             <p id="cardRarity"><b>Rarity:</b> ${cardRarity}</p>
             <p id="cardSeries"><b>Card Series:</b> ${cardSeries}</p>
             <p id="cardSet"><b>Card Set:</b> ${cardSet}</p>
           </div>
         `
+
+        let elems = document.querySelectorAll('.materialboxed')
+        let instances = M.Materialbox.init(elems)
 
         // put that pokeCard div into the div with id='cardDisplay' in the HTML file.
         document.getElementById('cardDisplay').append(pokeCard)
