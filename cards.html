@@ -15,7 +15,7 @@
 </head>
 
 <body>
-<!-- nav bar -->
+  <!-- nav bar -->
   <nav>
     <div class="nav-wrapper blue darken-4">
       <a href="index.html" class="brand-logo yellow-text"><i class="material-icons">home</i>Home</a>
@@ -41,19 +41,19 @@
 
 
   <!-- Search bar: to search name and type -->
-  <div class="row searchBar valign-wrapper blue lighten-2">
+  <section class="row searchBar valign-wrapper blue lighten-2">
 
-      <!-- choose one way to search -->
-    <div id="srcBy" class="col s4 l2 center-align yellow lighten-1">
+    <!-- head for search bar -->
+    <div id="srcBy" class="col s12 l2 center-align yellow lighten-1">
       Search by:
     </div>
-    
+
 
     <!-- search by name -->
     <div class="col s4 m7">
       Pokemon Name:
       <div class="input-field inline">
-        <input id="nameInput" type="text" class="validate blue lighten-1" placeholder="i.e. Pikachu">
+        <input id="inputName" type="text" class="validate blue lighten-1 grey-text text-lighten-2" placeholder="i.e. Pikachu" autofocus>
         <!-- <label for="nameInput">i.e. Pikachu</label> -->
       </div>
       <!-- This is our Name search button -->
@@ -64,67 +64,86 @@
     <!-- search by type -->
     <div class="col s4 m7">
       Pokemon Type:
+      <!-- search by type drop down -->
       <div class="input-field inline">
-        <input id="typeInput" type="text" class="validate blue lighten-1" placeholder="i.e. electric">
+        <select id="inputType" name="pokemonType" class="browser-default blue lighten-1 grey-text text-lighten-2">
+          <option value="Choose your option" disabled selected>Choose a type</option>
+          <option value="Colorless">Colorless</option>
+          <option value="Darkness">Dark</option>
+          <option value="Dragon">Dragon</option>
+          <option value="Lightning">Electric</option>
+          <option value="Fairy">Fairy</option>
+          <option value="Fighting">Fighting</option>
+          <option value="Fire">Fire</option>
+          <option value="Grass">Grass</option>
+          <option value="Metal">Metal</option>
+          <option value="Psychic">Psychic</option>
+          <option value="Water">Water</option>
+        </select>
+        <!-- <input id="inputType" type="text" class="validate blue lighten-1" placeholder="i.e. electric"> -->
         <!-- <label for="typeInput">i.e. electric</label> -->
       </div>
       <!-- This is our Type search button -->
       <button id="searchType">search</button>
     </div>
-    <!-- end search bar -->
-  </div>
-  
 
-  <!-- info bar that gives some basic info about the pokemon -->
-  <section class="row valign-wrapper teal lighten-2">
-    <h3 id="info" class="hide">
-      <!-- show name or type from search -->
-    </h3>
+
+
+    <!-- end search bar -->
   </section>
 
+  
+    
+
+
+  <!-- teal info bar that gives some basic info about the pokemon -->
+  <div class="row teal lighten-2 info">
+    <div id="info" class="col s12 l6 hide">
+      <!-- show name or type from search -->
+    </div>
+    <div id='typeNote' class="col s12 m6 hide">
+      (Note: Searching by type shows 100 random cards of that type.)
+    </div>
+  </div>
+
+
+  <!-- section that appears before searching for a card -->
   <section id="cardLanding" class="row">
     <!-- background image on left -->
-    <div class="col s2 sidePokeImage">
+    <div class="col s2 left-align hide-on-small-only">
+      <img src="./assets/Images/cardsSideImage.png">
       <img src="./assets/Images/cardsSideImage.png">
     </div>
 
-    <!-- carousel center -->
-    <div id="carouselCol" class="col s6 carousel">
-      <a class="carousel-item"><img src="https://mocah.org/uploads/posts/192091-pikachu-2560x1600.png"></a>
-      <a class="carousel-item"><img src="https://cdn.wallpapersafari.com/43/65/FG7EmQ.jpg"></a>
-      <a class="carousel-item"><img
-          src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/fd0629d0-40d4-4c9e-959c-c0ee7b4ebaed/dbw6sze-ac37eeee-ca4c-4323-9074-a52fad407bfa.jpg/v1/fill/w_1024,h_607,q_75,strp/eevee_poker_night_by_slifertheskydragon_dbw6sze-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3siaGVpZ2h0IjoiPD02MDciLCJwYXRoIjoiXC9mXC9mZDA2MjlkMC00MGQ0LTRjOWUtOTU5Yy1jMGVlN2I0ZWJhZWRcL2RidzZzemUtYWMzN2VlZWUtY2E0Yy00MzIzLTkwNzQtYTUyZmFkNDA3YmZhLmpwZyIsIndpZHRoIjoiPD0xMDI0In1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.iXEFU9SAM08ar2v9-E8QTUtLkrQfXog5dATioQmHDZc"></a>
-      <a class="carousel-item"><img
-          src="https://steamuserimages-a.akamaihd.net/ugc/788632363413286603/DE7DE32E3411DEB4614347276A006E01DA4417E8/?imw=637&imh=358&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true"></a>
-      <a class="carousel-item"><img
-          src="https://pm1.narvii.com/5787/ad99e84945aa296024b975333b2917d6855962c1_hq.jpg"></a>
+    <!-- random card center -->
+    <div id="randomDisplay" class="col s8 center-align">
+      <!-- random cards go here -->
     </div>
 
     <!-- background image on left -->
-    <div class="col s2 sidePokeImage">
+    <div class="col s2 right-align">
+      <img src="./assets/Images/cardsSideImage.png">
       <img src="./assets/Images/cardsSideImage.png">
     </div>
   </section>
 
   <!-- Display of the cards that match search -->
-  <div id="cardDisplay" class="row hide">
-    <!-- <div  class="col s12"> -->
-      <!-- pokeCards are populated here -->
-    <!-- </div> -->
-  </div>
+  <section id="cardDisplay" class="row hide">
+    <!-- pokeCards are populated here -->
+  </section>
 
-  
 
-  
-  
+
+
+
   <!-- Materialize Script -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  
+
   <!-- This is the Axios CDN -->
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-  
+
   <script src="assets/cards.js"></script>
-  
+
 </body>
 
 </html>
