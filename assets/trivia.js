@@ -4,7 +4,7 @@ let fourFrom150 = []
 
 // pick 4 numbers out of the 150 to be our answer choices, add them to the array
 for (let i = 0; i < 4; i++) {
-  let y = Math.floor(Math.random() * 150)
+  let y = Math.floor(Math.random() * 150)+1
   console.log(y)
   fourFrom150.push(y)
 }
