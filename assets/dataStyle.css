@@ -92,3 +92,29 @@
 #pokeName {
   text-transform: uppercase;
 }
+
+.radius {
+  border-radius: 50px 50px 50px 50px;
+}
+
+#abilities {
+  font-style: italic;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size-adjust: initial;
+  font-weight: 600;
+}
+
+#pokemonStats {
+  font-style: italic;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size-adjust: initial;
+  font-weight: 600;
+}
+
+#pokemonInfo {
+  font-style: italic;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size-adjust: initial;
+  font-weight: 600;
+  ;
+}
