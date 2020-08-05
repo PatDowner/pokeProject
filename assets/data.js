@@ -1,6 +1,8 @@
 
 
 
+
+
 $('#searchPokemon').click(() => {
   event.preventDefault()
 
