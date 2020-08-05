@@ -1,26 +1,26 @@
 /* controls if item is hidden or not. Sometimes used initially, other times added/removed in JS to toggle between hidden and not */
+
 .hide {
   display: none;
-}  
-
-
-
+}
 
 /* This section of code is for stuff that's ALWAYS on the page */
 
-
 /* sets overall background color */
+
 body {
   background-color: black;
-}  
+}
 
 /* for whole search bar (reminder: color set via classes */
+
 .searchBar {
   margin-top: 20px;
   height: 60px;
-}  
+}
 
 /* head for search bar ("Search by:"). reminder: color set via classes */
+
 #srcBy {
   font-size: 30px;
   height: 100%;
@@ -29,64 +29,86 @@ body {
 }
 
 /* formats input fields in search bar reminder: color background color set via classes */
+
 #nameInput, #typeInput {
   border: 1px solid lightgray;
   margin-top: 15px;
   padding-left: 12px;
   width: 150px;
-}  
-
-
-
+}
 
 /* This is for stuff that's visible on page before the first search */
 
-
 /* settings for the left/right stacks of pokemon images used in the landing display of this screen */
+
 .sidePokeImage {
   padding: 0px;
   width: 100%;
 }
 
-/* .randomCard {
-  width: 200px;
-  height: 282px;
+.randomDisplay {
+  /* object-fit: fill;
+  height: 300px; */
+  /* padding-top: 140%;
+  position: relative;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+   */
+}
+
+/* .randomCardItem {
+  
 } */
-
-
-
+.randomCard {
+  /* width: 100%; */
+  height: 300px;
+  /* object-fit: fill; */
+  /* height: min-content; */
+  /* min-width: 145; */
+  /* min-height: 200px; */
+  /* display: inline-block; */
+  /* padding: 0px; */
+  /* margin: 0px 50px; */
+}
 
 /* Put anything that formats search results below this line */
 
-
 /* for text in teal bar */
+
 h3 {
   margin: 20px;
   margin-left: 22.5px;
-}  
+}
 
 /* the div that wraps all the way around cards and their info box. This was just to remove some extra space around search results */
+
 .cardDiv {
   padding: 0px;
   margin: 0px;
 }
 
 /* this is what wraps all the way around the card and its description */
-.pokeCardItem {
+
+/* .pokeCardItem {
   margin-bottom: 20px;
-  border: 1px solid lightslategray;
-  /* height: 475px; */
-}
+  height: 475px;
+} */
 
 /* controls the image of the card itself */
+
 .pokeCard {
-  width: 100%;
+  /* width: 100%; */
+  height: 400px;
   display: inline-block;
   padding: 0px;
-  border-bottom: 1px solid lightslategray;
-}  
+  border: 1px solid lightslategray;
+  /* border-bottom: 1px solid lightslategray; */
+}
 
 /* controls the info boxes directly below the cards */
+
 .cardInfo {
   padding: 10px;
   color: aliceblue;
