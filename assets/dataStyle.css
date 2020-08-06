@@ -1,5 +1,5 @@
 .normal {
-background-color: grey;
+  background-color: grey;
 }
 
 .fire {
@@ -69,4 +69,69 @@ background-color: grey;
 
 .poison {
   background-color: rgb(101, 56, 101);
+}
+
+.position {
+  margin-top: 10%;
+  background-color: rgb(218, 173, 77);
+  border-radius: 50px 50px 50px 50px;
+}
+
+.left {
+  margin-left: 100px;
+}
+
+#firstCard {
+  text-align: center;
+  display: block;
+  /* width: 100%; */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#pokeName {
+  text-transform: uppercase;
+}
+
+.radius {
+  border-radius: 50px 50px 50px 50px;
+}
+
+#abilities {
+  font-style: italic;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size-adjust: initial;
+  font-weight: 600;
+}
+
+#pokemonStats {
+  font-style: italic;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size-adjust: initial;
+  font-weight: 600;
+}
+
+#pokemonInfo {
+  font-style: italic;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size-adjust: initial;
+  font-weight: 600;
+  ;
+}
+
+.dropdown-content {
+  background-color: yellow;
+  font-style: italic;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size-adjust: initial;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.abilityName {
+  text-transform: capitalize;
+}
+
+.statNames {
+  text-transform: capitalize;
 }

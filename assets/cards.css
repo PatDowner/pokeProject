@@ -37,14 +37,14 @@ body {
   width: 150px;
 }
 
+
+
 /* This is for stuff that's visible on page before the first search */
 
 #randomDisplay {
   padding: 0px;
   justify-content: space-around;
 }
-
-
 
 /* Put anything that formats search results below this line */
 
