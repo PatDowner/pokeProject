@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pokecards Cards</title>
+  <!-- reset css -->
+  <link rel="stylesheet" href="./assets/reset.css">
+  <!-- Materialize CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- my style guide -->
+  <link rel="stylesheet" href="./assets/cards.css">
+</head>
+
+<body>
+  <!-- nav bar -->
+  <nav>
+    <div class="nav-wrapper blue darken-4">
+      <a href="index.html" class="brand-logo yellow-text"><i class="material-icons">home</i>Home</a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a class="yellow-text" href="data.html">Pokemon Data</a></li>
+        <li><a class="yellow-text" href="cards.html">Pokemon Cards</a></li>
+        <li><a class="yellow-text" href="trivia.html">Pokemon Trivia</a></li>
+        <li><a class="yellow-text" href="resources.html">Pokemon Resources</a></li>
+        <li><a class="yellow-text" href="aboutus.html">About Us</a></li>
+      </ul>
+
+      <ul class="sidenav" id="mobile-demo">
+        <li><a class="yellow-text" href="data.html">Pokemon Data</a></li>
+        <li><a class="yellow-text" href="cards.html">Pokemon Cards</a></li>
+        <li><a class="yellow-text" href="trivia.html">Pokemon Trivia</a></li>
+        <li><a class="yellow-text" href="resources.html">Pokemon Resources</a></li>
+        <li><a class="yellow-text" href="aboutus.html">About Us</a></li>
+      </ul>
+    </div>
+  </nav>
+
+
+
+  <!-- Search bar: to search name and type -->
+  <!-- <section class="row searchBar valign-wrapper blue lighten-2"> -->
+  <div class="divider"></div>
+  <div class="section">
+    <h5>
+      <!-- head for search bar -->
+      <div id="srcBy" class="col s3 l2 center-align yellow lighten-1">
+        Search by:
+      </div>
+    </h5>
+  </div>
+
+
+  
+  <div class="divider"></div>
+  <div class="section blue lighten-1 bigbar">
+  <!-- search by name -->
+  <div class="col s4 md7">
+    Pokemon Name:
+    <div class="input-field inline">
+      <input id="inputName" type="text" class="validate blue lighten-1 grey-text text-lighten-2"
+        placeholder="i.e. Pikachu" autofocus>
+      <!-- <label for="nameInput">i.e. Pikachu</label> -->
+    </div>
+    <!-- This is our Name search button -->
+    <button id="searchName">search</button>
+  </div>
+  </div>
+
+
+  <!-- search by type -->
+  <div class="divider "></div>
+  <div class="section blue lighten-1 bigbar">
+  <div class="col s4 md7">
+    Pokemon Type:
+    <!-- search by type drop down -->
+    <div class="input-field inline">
+      <select id="inputType" name="pokemonType" class="browser-default blue lighten-1 grey-text text-lighten-2">
+        <option value="Choose your option" disabled selected>Choose a type</option>
+        <option value="Colorless">Colorless</option>
+        <option value="Darkness">Darkness</option>
+        <option value="Dragon">Dragon</option>
+        <option value="Lightning">Lightning</option>
+        <option value="Fairy">Fairy</option>
+        <option value="Fighting">Fighting</option>
+        <option value="Fire">Fire</option>
+        <option value="Grass">Grass</option>
+        <option value="Metal">Metal</option>
+        <option value="Psychic">Psychic</option>
+        <option value="Water">Water</option>
+      </select>
+      <!-- <input id="inputType" type="text" class="validate blue lighten-1" placeholder="i.e. electric"> -->
+      <!-- <label for="typeInput">i.e. electric</label> -->
+    </div>
+    <!-- This is our Type search button -->
+    <button id="searchType">search</button>
+  </div>
+  </div>
+
+
+
+  <!-- end search bar -->
+  </section>
+
+
+
+
+
+  <!-- teal info bar that gives some basic info about the pokemon -->
+  <div class="row teal lighten-2 info">
+    <div id="info" class="col s12 l6 hide">
+      <!-- show name or type from search -->
+    </div>
+    <div id='typeNote' class="col s12 m6 hide">
+      (Note: Searching by type shows 100 random cards of that type.)
+    </div>
+  </div>
+
+
+  <!-- section that appears before searching for a card -->
+  <section id="cardLanding" class="row">
+    <!-- background image on left -->
+    <div class="col s2 left-align hide-on-small-only">
+      <img src="./assets/Images/cardsSideImage.png">
+      <img src="./assets/Images/cardsSideImage.png">
+    </div>
+
+    <!-- random card center -->
+    <div id="randomDisplay" class="col s8 center-align">
+      <!-- random cards go here -->
+    </div>
+
+    <!-- background image on left -->
+    <div class="col s2 right-align hide-on-small-only">
+      <img src="./assets/Images/cardsSideImage.png">
+      <img src="./assets/Images/cardsSideImage.png">
+    </div>
+  </section>
+
+  <!-- Display of the cards that match search -->
+  <section id="cardDisplay" class="row hide">
+    <!-- pokeCards are populated here -->
+  </section>
+
+  <br><br><br>
+  <footer class="page-footer blue darken-4">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="yellow-text">Thank you for viewing</h5>
+          <p class="yellow-text">UCI Irvine Coding Bootcamp Project 1</p>
+        </div>
+        <div class="col l4 offset-l2 s12">
+          <h5 class="yellow-text">Links</h5>
+          <ul>
+            <li><a class="yellow-text" href="data.html">Pokemon Data</a></li>
+            <li><a class="yellow-text" href="cards.html">Pokemon Cards</a></li>
+            <li><a class="yellow-text" href="trivia.html">Pokemon Trivia</a></li>
+            <li><a class="yellow-text" href="resources.html">Pokemon Resources</a></li>
+            <li><a class="yellow-text" href="aboutus.html">About Us</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container yellow-text">
+        © 2020 Copyright Pokemon Fans
+        <a class="yellow-text right" href="index.html">Back to top</a>
+      </div>
+    </div>
+  </footer>
+
+
+
+
+
+  <!-- Materialize Script -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+  <!-- This is the Axios CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+  <script src="assets/cards.js"></script>
+
+  <script>
+      document.addEventListener('DOMContentLoaded', function () {
+          var elems = document.querySelectorAll('.sidenav');
+          var instances = M.Sidenav.init(elems);
+        });
+  </script>
+
+</body>
+
+</html>

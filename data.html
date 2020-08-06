@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <style>
+        body {
+            background-image: url('https://images.wallpaperscraft.com/image/pokemon_background_blue_totodile_83629_2560x1080.jpg');
+        }
+
+        .body {
+            display: flex;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+
+        .main {
+            flex: 1 0 auto;
+        }
+    </style>
+
+    <link rel="stylesheet" href="./assets/dataStyle.css">
+
+</head>
+
+<body>
+
+    <nav>
+        <div class="nav-wrapper blue darken-4">
+            <a id="index" href="index.html" class="brand-logo yellow-text"><i class="material-icons">home</i>Home</a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+                <li><a id="data" class="yellow-text" href="data.html">Pokemon Data</a></li>
+                <li><a id="cards" class="yellow-text" href="cards.html">Pokemon Cards</a></li>
+                <li><a id="trivia" class="yellow-text" href="trivia.html">Pokemon Trivia</a></li>
+                <li><a id="resources" class="yellow-text" href="resources.html">Pokemon Resources</a></li>
+                <li><a id="aboutus" class="yellow-text" href="aboutus.html">About Us</a></li>
+            </ul>
+
+            <ul class="sidenav" id="mobile-demo">
+                <li><a id="dataMobile" class="yellow-text" href="data.html">Pokemon Data</a></li>
+                <li><a id="cardsMobile" class="yellow-text" href="cards.html">Pokemon Cards</a></li>
+                <li><a id="triviaMobile" class="yellow-text" href="trivia.html">Pokemon Trivia</a></li>
+                <li><a id="resourcesMobile" class="yellow-text" href="resources.html">Pokemon Resources</a></li>
+                <li><a id="aboutusMobile" class="yellow-text" href="aboutus.html">About Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+
+
+
+    <!-- Page Layout here -->
+
+    <!-- Search Bar -->
+    <div class="container">
+
+        <div class="background row position">
+            <form class="col s12 ">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <label for="icon_prefix2">Enter Pokemon Name</label>
+                        <input id="pokemon" type="text" class="validate">
+                        <button id="searchPokemon"
+                            class="btn-floating btn-large waves-effect waves-light red">GO</button>
+
+                        <!-- Dropdown Trigger -->
+                        <a id="historyButton" class='dropdown-trigger btn' data-target='dropdown1'>Search History</a>
+
+                        <!-- Dropdown Structure -->
+                        <ul id='dropdown1' class='dropdown-content'></ul>
+
+
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+
+
+    <div class="container">
+
+        <div class="row">
+            <div id="firstCard" class="col s12 l3">
+
+
+                <div id="test" class="card-content red-text radius card yellow darken-1">
+                    <div id="pokemonPicture" class="card-image">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png"
+                            alt="pokeball">
+                    </div>
+                    <div id="pokemonInfo" class="card-content">
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+            <div class="col s12 l9">
+                <div class="row">
+                    <div class="radius card yellow darken-1">
+                        <div id="pokemonStats" class="card-content red-text">
+                            <span class="card-title">Pokemon Stats</span>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="radius card yellow darken-1">
+                        <div id="abilities" class="card-content red-text">
+                            <span class="card-title">Abilities</span>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+
+
+
+        </div>
+    </div>
+
+
+    <footer class="page-footer blue darken-4">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="yellow-text">Thank you for viewing</h5>
+                    <p class="yellow-text">UCI Irvine Coding Bootcamp Project 1</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="yellow-text">Links</h5>
+                    <ul>
+                        <li><a class="yellow-text" href="data.html">Pokemon Data</a></li>
+                        <li><a class="yellow-text" href="cards.html">Pokemon Cards</a></li>
+                        <li><a class="yellow-text" href="trivia.html">Pokemon Trivia</a></li>
+                        <li><a class="yellow-text" href="resources.html">Pokemon Resources</a></li>
+                        <li><a class="yellow-text" href="aboutus.html">About Us</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container yellow-text">
+                © 2020 Copyright Pokemon Fans
+                <a class="yellow-text right" href="index.html">Back to top</a>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <script src="./assets/data.js"></script>
+
+
+
+    <script>
+
+        document.addEventListener('DOMContentLoaded', function () {
+            var elems = document.querySelectorAll('.sidenav');
+            var instances = M.Sidenav.init(elems);
+        });
+
+        document.getElementById("index").onclick = function () {
+            location.href = "index.html";
+        };
+
+
+        document.getElementById("data").onclick = function () {
+            location.href = "data.html";
+        };
+
+
+        document.getElementById("cards").onclick = function () {
+            location.href = "cards.html";
+        };
+
+
+        document.getElementById("trivia").onclick = function () {
+            location.href = "trivia.html";
+        };
+
+        document.getElementById("resources").onclick = function () {
+            location.href = "resources.html";
+        };
+        document.getElementById("aboutus").onclick = function () {
+            location.href = "aboutus.html";
+        };
+
+        document.getElementById("dataMobile").onclick = function () {
+            location.href = "data.html.html";
+        };
+
+        document.getElementById("cardsMobile").onclick = function () {
+            location.href = "cards.html";
+        };
+
+        document.getElementById("triviaMobile").onclick = function () {
+            location.href = "trivia.html";
+        };
+
+        document.getElementById("resourcesMobile").onclick = function () {
+            location.href = "resources.html";
+        };
+
+        document.getElementById("aboutusMobile").onclick = function () {
+            location.href = "aboutus.html";
+        };
+
+
+
+
+
+    </script>
+
+    <script>
+
+        document.addEventListener('DOMContentLoaded', function () {
+            var elems = document.querySelectorAll('.dropdown-trigger');
+            var instances = M.Dropdown.init(elems);
+        });
+
+
+
+    </script>
+
+</body>
+
+</html>
