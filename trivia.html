@@ -40,7 +40,10 @@
 <div class="container">
 
   <h1>Pokemon Trivia Quiz</h1>
+        <div id="highScore"></div>
   <h2 id="score"></h2>
+  <div id="countDown">Time left:<br><span
+      id="time">90</span>&nbsp;seconds</div>
   <div id="test"></div>
   <!-- Where we put any instructions. E.g. do we want it to be timed?? Hide this once we move into the actual quiz -->
   <div id="instructionsDiv">
@@ -76,13 +79,32 @@
 
 <!-- Quiz finish screen -->
 <!-- hidden on landing, shown after end of quiz -->
-<div id="finish" class="hide">
+<div id="finished" class="hide">
   <!-- display a score of some kind -->
   <!-- store/recall high score like we did in our quiz HW?? -->
-  <button id="startOver" class="hide">
+  <!-- <button id="startOver" class="hide"> -->
     <!-- put a start over button here that will reset everything (clear score, re-hide/show appropriate divs, etc) -->
-  </button>
+  <!-- </button> -->
 </div>
+
+<!-- Text that's displayed for your final score -->
+<div>
+  <h3 id="finalScore" class="hide"></h3>
+</div>
+<form id="userSet" class="hide">
+  <!-- div for inputting a username if you achieve a high score -->
+  <div id="input">
+    <!-- visible text -->
+    <label for="initials">Your initials: </label>
+    <!-- text input box -->
+    <input type="text" name="initials" id="initials" placeholder="your initials">
+  </div>
+  <div>
+    <!-- save high score button -->
+    <button id="save" class="save">Save High Score</button>
+  </div>
+</form>
+<button id="startOver" class="hide">Start Over</button>
 
 
 
