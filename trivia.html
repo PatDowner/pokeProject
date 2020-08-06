@@ -136,11 +136,11 @@
           <div class="col l4 offset-l2 s12">
             <h5 class="yellow-text">Links</h5>
             <ul>
-              <li><a class="yellow-text" href="data.html">Pokemon Data</a></li>
-              <li><a class="yellow-text" href="cards.html">Pokemon Cards</a></li>
-              <li><a class="yellow-text" href="trivia.html">Pokemon Trivia</a></li>
-              <li><a class="yellow-text" href="resources.html">Pokemon Resources</a></li>
-              <li><a class="yellow-text" href="aboutus.html">About Us</a></li>
+              <li><a id="dataFooter" class="yellow-text" href="data.html">Pokemon Data</a></li>
+              <li><a id="cardsFooter" class="yellow-text" href="cards.html">Pokemon Cards</a></li>
+              <li><a id="triviaFooter" class="yellow-text" href="trivia.html">Pokemon Trivia</a></li>
+              <li><a id="resourcesFooter" class="yellow-text" href="resources.html">Pokemon Resources</a></li>
+              <li><a id="aboutusFooter" class="yellow-text" href="aboutus.html">About Us</a></li>
             </ul>
           </div>
         </div>
@@ -219,6 +219,29 @@
       document.getElementById("aboutusMobile").onclick = function () {
         location.href = "aboutus.html";
       };
+
+      
+        document.getElementById("dataFooter").onclick = function () {
+          location.href = "data.html";
+        };
+
+        document.getElementById("cardsFooter").onclick = function () {
+          location.href = "cards.html";
+        };
+
+        document.getElementById("triviaFooter").onclick = function () {
+          location.href = "trivia.html";
+
+        };
+
+        document.getElementById("resourcesFooter").onclick = function () {
+          location.href = "resources.html";
+
+        };
+
+        document.getElementById("aboutusFooter").onclick = function () {
+          location.href = "aboutus.html";
+        };
 
 
   </script>
