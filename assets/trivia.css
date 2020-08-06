@@ -26,9 +26,22 @@ button {
   margin: 20px;
 }
 
+#questionIMG {
+  height: 300px;
+}
+#pokeIMG {
+  width: 75%;
+  max-height: 300px;
+}
+
 .brightness {
   filter: brightness(0);
   -webkit-filter: brightness(0);
+}
+
+#ashPika {
+  height: 50%;
+  vertical-align: center;
 }
 
 footer {
