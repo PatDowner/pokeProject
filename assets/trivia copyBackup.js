@@ -68,11 +68,17 @@ const answerButtons = (x, y, z) => {
       .then(res => {
 
         if (type = 'name') {
+          console.log('name question')
           type = res.data.name
           console.log(res.data.name)
+          document.getElementById('question').innerText = `Who's that Pokemon?`
+
+
         } else if (type = 'types') {
+          console.log('type question')
           type = res.data.types[0].type.name
           console.log(res.data.types[0].type.name)
+          document.getElementById('question').innerText = `What type is that Pokemon?`
         }
         console.log(type)
         answers.push(type)
@@ -95,7 +101,7 @@ const answerButtons = (x, y, z) => {
 
   axios.get(`https://pokeapi.co/api/v2/pokemon/${random}`)
     .then(res => {
-      random = res.data.type
+      random = type
       console.log(random)
       answer = random
       console.log(answer)
@@ -156,13 +162,13 @@ document.addEventListener('click', event => {
       score++
       document.getElementById('score').innerHTML = `Score: ${score}`
       newValues()
-      answerButtons(pick4, random)
+      answerButtons(pick4, random, type)
       questionImage(random)
     } else {
       console.log('wrong')
       document.getElementById('feedback').innerText = 'wrong'
       newValues()
-      answerButtons(pick4, random)
+      answerButtons(pick4, random, type)
       questionImage(random)
     }
   }

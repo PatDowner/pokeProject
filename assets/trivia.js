@@ -46,6 +46,8 @@ const answerButtons = (x, y) => {
   console.log(pick4)
   console.log(random)
 
+  answers = []
+
   // clear out the div to make room for new questions
   document.getElementById('answersDiv').innerHTML = ''
 
