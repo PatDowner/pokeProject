@@ -53,7 +53,7 @@ const getPokemon = pokemon => {
 
 
       document.getElementById('pokemonPicture').innerHTML = `
-      <h4 id="pokeName">${pokemon}</h4>
+      <p id="pokeName">${pokemon}</p>
         <img src="${result.data.sprites.front_default}" alt="Pokemon Front Image">
       `
 
