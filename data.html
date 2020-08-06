@@ -32,22 +32,22 @@
 
     <nav>
         <div class="nav-wrapper blue darken-4">
-            <a href="index.html" class="brand-logo yellow-text"><i class="material-icons">home</i>Home</a>
+            <a id="index" href="index.html" class="brand-logo yellow-text"><i class="material-icons">home</i>Home</a>
             <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
             <ul class="right hide-on-med-and-down">
-                <li><a class="yellow-text" href="data.html">Pokemon Data</a></li>
-                <li><a class="yellow-text" href="cards.html">Pokemon Cards</a></li>
-                <li><a class="yellow-text" href="trivia.html">Pokemon Trivia</a></li>
-                <li><a class="yellow-text" href="resources.html">Pokemon Resources</a></li>
-                <li><a class="yellow-text" href="aboutus.html">About Us</a></li>
+                <li><a id="data" class="yellow-text" href="data.html">Pokemon Data</a></li>
+                <li><a id="cards" class="yellow-text" href="cards.html">Pokemon Cards</a></li>
+                <li><a id="trivia" class="yellow-text" href="trivia.html">Pokemon Trivia</a></li>
+                <li><a id="resources" class="yellow-text" href="resources.html">Pokemon Resources</a></li>
+                <li><a id="aboutus" class="yellow-text" href="aboutus.html">About Us</a></li>
             </ul>
-    
+
             <ul class="sidenav" id="mobile-demo">
-                <li><a class="yellow-text" href="data.html">Pokemon Data</a></li>
-                <li><a class="yellow-text" href="cards.html">Pokemon Cards</a></li>
-                <li><a class="yellow-text" href="trivia.html">Pokemon Trivia</a></li>
-                <li><a class="yellow-text" href="resources.html">Pokemon Resources</a></li>
-                <li><a class="yellow-text" href="aboutus.html">About Us</a></li>
+                <li><a id="dataMobile" class="yellow-text" href="data.html">Pokemon Data</a></li>
+                <li><a id="cardsMobile" class="yellow-text" href="cards.html">Pokemon Cards</a></li>
+                <li><a id="triviaMobile" class="yellow-text" href="trivia.html">Pokemon Trivia</a></li>
+                <li><a id="resourcesMobile" class="yellow-text" href="resources.html">Pokemon Resources</a></li>
+                <li><a id="aboutusMobile" class="yellow-text" href="aboutus.html">About Us</a></li>
             </ul>
         </div>
     </nav>
@@ -180,21 +180,69 @@
             var elems = document.querySelectorAll('.sidenav');
             var instances = M.Sidenav.init(elems);
         });
-        
+
+        document.getElementById("index").onclick = function () {
+            location.href = "index.html";
+        };
 
 
-     </script>
+        document.getElementById("data").onclick = function () {
+            location.href = "data.html";
+        };
 
-     <script>
+
+        document.getElementById("cards").onclick = function () {
+            location.href = "cards.html";
+        };
+
+
+        document.getElementById("trivia").onclick = function () {
+            location.href = "trivia.html";
+        };
+
+        document.getElementById("resources").onclick = function () {
+            location.href = "resources.html";
+        };
+        document.getElementById("aboutus").onclick = function () {
+            location.href = "aboutus.html";
+        };
+
+        document.getElementById("dataMobile").onclick = function () {
+            location.href = "data.html.html";
+        };
+
+        document.getElementById("cardsMobile").onclick = function () {
+            location.href = "cards.html";
+        };
+
+        document.getElementById("triviaMobile").onclick = function () {
+            location.href = "trivia.html";
+        };
+
+        document.getElementById("resourcesMobile").onclick = function () {
+            location.href = "resources.html";
+        };
+
+        document.getElementById("aboutusMobile").onclick = function () {
+            location.href = "aboutus.html";
+        };
+
+
+
+
+
+    </script>
+
+    <script>
 
         document.addEventListener('DOMContentLoaded', function () {
-                var elems = document.querySelectorAll('.dropdown-trigger');
-                var instances = M.Dropdown.init(elems);
-            });
+            var elems = document.querySelectorAll('.dropdown-trigger');
+            var instances = M.Dropdown.init(elems);
+        });
 
 
 
-     </script>
+    </script>
 
 </body>
 
