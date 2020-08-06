@@ -2,6 +2,9 @@
 let pick4 = []
 let random
 let answers = []
+let answer
+let score = 0
+document.getElementById('score').innerHTML = `Score: ${score}`
 
 // get 4 new pokemon (and a correct one) to pull for a question
 const newValues = () => {
@@ -43,9 +46,13 @@ const answerButtons = (x, y) => {
   console.log(pick4)
   console.log(random)
 
+  // clear out the div to make room for new questions
+  document.getElementById('answersDiv').innerHTML = ''
 
+  // some how in this loop the answer order shifts. Same overall answers, but shifted by 1 (with the last one looped around to take the first position).
   // loop to make answer buttons
   for (let i = 0; i < 4; i++) {
+    // console.log(i)
     axios.get(`https://pokeapi.co/api/v2/pokemon/${pick4[i]}`)
       .then(res => {
 
@@ -56,11 +63,11 @@ const answerButtons = (x, y) => {
         answersElem = document.createElement('button')
         answersElem.className = "answerBtn"
         answersElem.dataset.pokeName = res.data.name
-        answersElem.dataset.number = i
+        answersElem.dataset.number = res.data.id
         answersElem.innerHTML = `
       ${res.data.name}
       `
-        document.getElementById('test').append(answersElem)
+        document.getElementById('answersDiv').append(answersElem)
 
       })
       .catch(err => { console.log(err) })
@@ -72,6 +79,8 @@ const answerButtons = (x, y) => {
     .then(res => {
       random = res.data.name
       console.log(random)
+      answer = random
+      console.log(answer)
     })
     .catch(err => { console.log(err) })
 
@@ -86,105 +95,66 @@ const questionImage = (y) => {
   axios.get(`https://pokeapi.co/api/v2/pokemon/${random}`)
     .then(res => {
       console.log(res.data.sprites.back_default)
+      document.getElementById('questionIMG').innerHTML = `
+      <img src="${res.data.sprites.back_default}">
+      `
     })
     .catch(err => { console.log(err) })
 
+  console.log(random)
+  // end questionImage
 }
-newValues()
-answerButtons(pick4, random)
-questionImage(random)
-
-
-
-// newQuestion()
-// // Takes the pokemon ID#s from the pick4 and puts their corresponding names into array answers
-// const answerButtons = () => {
-
-//   for (let i = 0; i < 4; i++) {
-//     axios.get(`https://pokeapi.co/api/v2/pokemon/${pick4[i]}`)
-//       .then(res => {
-
-//         // console.log(res.data)
-//         answers.push(res.data.name)
-
-//         // creates a button with that pokemon's name to put in the answers section of the HTML
-//         answersElem = document.createElement('button')
-//         answersElem.className = "answerBtn"
-//         answersElem.dataset.pokeName = res.data.name
-//         answersElem.dataset.number = i
-//         answersElem.innerHTML = `
-//       ${res.data.name}
-//       `
-//         document.getElementById('answers').append(answersElem)
-
-//       })
-
-//   }
-//   document.getElementById('answersDiv').classList.add('hide')
-
-// }
-
-
-// // This figures out the image to populate into the question by reverse engineering the question from our predetermined correct answer.
-// const questionInfo = () => {
-
-//   // answers[random] tells us the name which the pokemon from the answers we are designating as our correct answer
-//   axios.get(`https://pokeapi.co/api/v2/pokemon/${answers[random]}`)
-//     .then(res => {
-//       console.log(answers)
-//       console.log(res.data)
-//       console.log(res.data.sprites.back_default)
-
-//       // go pull the sprite image that matches the name of the pokemon that we've designated as the correct answer and puts its image on the screen
-//       document.getElementById('questionIMG').innerHTML = `
-//       <img src="${res.data.sprites.back_default}">
-//       `
-
-//     })
-
-
-
-// }
-
-// // generate the answer buttons
-// answerButtons()
-
-// // when we click start...
-// document.getElementById('startBtn').addEventListener('click', event => {
-//   event.preventDefault()
-//   document.getElementById('instructionsDiv').classList.add('hide')
-//   document.getElementById('questionsDiv').classList.remove('hide')
-//   document.getElementById('answersDiv').classList.remove('hide')
-//   // generate a sprite for the question and shows the question div
-//   newQuestion()
-//   questionInfo()
-
-// })
-
-// // global event listener
-// document.addEventListener('click', event => {
-
-//   event.preventDefault()
-
-//   if (event.target.classList.contains('answerBtn')) {
-//     console.log('works')
-//     if (event.target.dataset.pokeName === answers[random]) {
-//       console.log('correct')
-//       newQuestion()
-//       questionInfo()
-//     } else {
-//       console.log('wrong')
-//       newQuestion()
-//       questionInfo()
-//     }
-//   }
 
 
 
 
 
 
-// })
+
+// when we click start...
+document.getElementById('startBtn').addEventListener('click', event => {
+  event.preventDefault()
+  document.getElementById('instructionsDiv').classList.add('hide')
+  document.getElementById('questionsDiv').classList.remove('hide')
+  document.getElementById('answersDiv').classList.remove('hide')
+
+  newValues()
+  answerButtons(pick4, random)
+  questionImage(random)
+  // console.log(pick4)
+  // console.log(random)
+})
+
+// global event listener
+document.addEventListener('click', event => {
+
+  event.preventDefault()
+
+  if (event.target.classList.contains('answerBtn')) {
+    console.log('works')
+    if (event.target.dataset.pokeName === random) {
+      console.log('correct')
+      document.getElementById('feedback').innerText = 'correct'
+      score++
+      document.getElementById('score').innerHTML = `Score: ${score}`
+      newValues()
+      answerButtons(pick4, random)
+      questionImage(random)
+    } else {
+      console.log('wrong')
+      document.getElementById('feedback').innerText = 'wrong'
+      newValues()
+      answerButtons(pick4, random)
+      questionImage(random)
+    }
+  }
+
+
+
+
+
+
+})
 
 
 

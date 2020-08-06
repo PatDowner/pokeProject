@@ -40,7 +40,7 @@
 <div class="container">
 
   <h1>Pokemon Trivia Quiz</h1>
-
+  <h2 id="score"></h2>
   <div id="test"></div>
   <!-- Where we put any instructions. E.g. do we want it to be timed?? Hide this once we move into the actual quiz -->
   <div id="instructionsDiv">
@@ -53,6 +53,11 @@
     </button>
   </div>
   
+<!-- feedback div -->
+<div id="feedback">
+  <!-- correct/wrong message -->
+</div>
+
   <!-- question div -->
   <!-- hidden on landing, shown after clicking startBtn -->
   <div id="questionsDiv" class="hide">
@@ -63,10 +68,11 @@
   
   <!-- answers div -->
   <!-- hidden on landing, shown after clicking startBtn -->
-  <div id="answersDiv">
-    <ul id="answers"></ul>
+  <div id="answersDiv" class="hide">
   <!-- we'll want to put answers here that correspond to the current question shown above -->
 </div>
+
+
 
 <!-- Quiz finish screen -->
 <!-- hidden on landing, shown after end of quiz -->
