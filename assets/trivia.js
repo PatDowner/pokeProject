@@ -1,47 +1,97 @@
 // an array we're gonna use to pick our 4 pokemon for the answers
 let fourFrom150 = []
+let randomNum
 
 
 // pick 4 numbers out of the 150 to be our answer choices, add them to the array
 for (let i = 0; i < 4; i++) {
-  let y = Math.floor(Math.random() * 150)
+  let y = Math.floor(Math.random() * 150) + 1
   console.log(y)
   fourFrom150.push(y)
 }
 
+
+for (let i = 0; i < 4; i++) {
+  randomNum = Math.floor(Math.random() * 4)
+}
+
+console.log(randomNum)
+
 console.log(fourFrom150)
 
-// array for possible answers
 let answers = []
 
+// array for possible answers
+
 // Sets position 0 so we can use that as a correct answer
-axios.get(`https://pokeapi.co/api/v2/pokemon/${fourFrom150[0]}`)
-  .then(res => {
-    console.log(res.data)
-    answers.push(res.data.name)
+// axios.get(`https://pokeapi.co/api/v2/pokemon/${fourFrom150[0]}`)
+//   .then(res => {
+//     console.log(res.data)
+//     // answers.push(res.data.name)
 
-    document.getElementById('test').innerHTML = `
-    <p>Whos that pokemon</p>
-    <img src="${res.data.sprites.back_default}">
-    <p>${res.data.name}</p>
-    `
-
-
-  })
+//     document.getElementById('test').innerHTML = `
+//     <p>Whos that pokemon</p>
+//     <img src="${res.data.sprites.back_default}">
+//     `
+//     // <p>${res.data.name}</p>
 
 
-// generates link to reference the data for each of the 4 pokemon
-for (let i = 1; i < 4; i++) {
-  axios.get(`https://pokeapi.co/api/v2/pokemon/${fourFrom150[i]}`)
+//   })
+
+
+
+
+const myFunction = () => {
+
+  // generates link to reference the data for each of the 4 pokemon
+  for (let i = 0; i < 4; i++) {
+    axios.get(`https://pokeapi.co/api/v2/pokemon/${fourFrom150[i]}`)
     .then(res => {
+
       console.log(res.data)
       answers.push(res.data.name)
+      
+      
+      answersElem = document.createElement('button')
+      answersElem.dataset.pokeName = res.data.name
+      answersElem.dataset.number = i
+      answersElem.innerHTML = `
+      ${res.data.name}
+      `
+      document.getElementById('answers').append(answersElem)
+      
+    })
+    
+  }
+  
+}
+
+
+const correctInfo = () => {
+
+  axios.get(`https://pokeapi.co/api/v2/pokemon/${answers[randomNum]}`)
+    .then(res => {
+
+      console.log(res.data)
+      console.log(res.data.sprites.back_default)
+
+      document.getElementById('test').innerHTML = `
+    <img src="${res.data.sprites.back_default}">
+    `
+
     })
 
 }
 
-console.log(answers)
+myFunction()
 
+document.getElementById('startBtn').addEventListener('click', event => {
+  event.preventDefault()
+  
+  correctInfo()
+  
+  
+})
 
 
 // // set a variable that selects a random position in the main array. This will determine which position in the array has our correct answer
