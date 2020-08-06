@@ -24,7 +24,7 @@
         }
     </style>
 
-
+    <link rel="stylesheet" href="./assets/dataStyle.css">
 
 </head>
 
@@ -42,7 +42,7 @@
                 <li><a class="yellow-text" href="resources.html">Pokemon Resources</a></li>
                 <li><a class="yellow-text" href="aboutus.html">About Us</a></li>
             </ul>
-    
+
             <ul class="sidenav" id="mobile-demo">
                 <li><a class="yellow-text" href="data.html">Pokemon Data</a></li>
                 <li><a class="yellow-text" href="cards.html">Pokemon Cards</a></li>
@@ -54,69 +54,144 @@
     </nav>
 
 
-    <form>
-        <input id="pokemon" type="text">
-        <button id="searchPokemon">Search</button>
-    </form>
 
+    <!-- Page Layout here -->
 
-    <p id="results"></p>
-    <p id="stats"></p>
-
-
-
-
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-
-
-<footer class="page-footer blue darken-4">
+    <!-- Search Bar -->
     <div class="container">
+
+        <div class="background row position">
+            <form class="col s12 ">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <label for="icon_prefix2">Enter Pokemon Name</label>
+                        <input id="pokemon" type="text" class="validate">
+                        <button id="searchPokemon"
+                            class="btn-floating btn-large waves-effect waves-light red">GO</button>
+
+                        <!-- Dropdown Trigger -->
+                        <a id="historyButton"class='dropdown-trigger btn' data-target='dropdown1'>Search History</a>
+                        
+                        <!-- Dropdown Structure -->
+                        <ul id='dropdown1' class='dropdown-content'></ul>
+                            
+
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+
+
+    <div class="container">
+
         <div class="row">
-            <div class="col l6 s12">
-                <h5 class="yellow-text">Thank you for viewing</h5>
-                <p class="yellow-text">UCI Irvine Coding Bootcamp Project 1</p>
+            <div id="firstCard" class="col s12 l3">
+                
+
+                    <div id="test" class="card-content red-text radius card yellow darken-1">
+                        <div id="pokemonPicture" class="card-image">
+                            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png"
+                                alt="pokeball">
+                        </div>
+                        <div id="pokemonInfo" class="card-content">
+
+                        </div>
+
+
+                    </div>
+                
+
             </div>
-            <div class="col l4 offset-l2 s12">
-                <h5 class="yellow-text">Links</h5>
-                <ul>
-                    <li><a class="yellow-text" href="data.html">Pokemon Data</a></li>
-                    <li><a class="yellow-text" href="cards.html">Pokemon Cards</a></li>
-                    <li><a class="yellow-text" href="trivia.html">Pokemon Trivia</a></li>
-                    <li><a class="yellow-text" href="resources.html">Pokemon Resources</a></li>
-                    <li><a class="yellow-text" href="aboutus.html">About Us</a></li>
-                </ul>
+
+            <div class="col s12 l9">
+                <div class="row">
+                    <div class="radius card yellow darken-1">
+                        <div id="pokemonStats" class="card-content red-text">
+                            <span class="card-title">Pokemon Stats</span>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="radius card yellow darken-1">
+                        <div id="abilities" class="card-content red-text">
+                            <span class="card-title">Abilities</span>
+
+                        </div>
+                    </div>
+                </div>
+
             </div>
+
+
+
+
+
+
         </div>
     </div>
-    <div class="footer-copyright">
-        <div class="container yellow-text">
-            © 2020 Copyright Pokemon Fans
-            <a class="yellow-text right" href="index.html">Back to top</a>
-        </div>
-    </div>
-</footer>
+   
+
+        <footer class="page-footer blue darken-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col l6 s12">
+                        <h5 class="yellow-text">Footer Content</h5>
+                        <p class="yellow-text">You can use rows and columns here to organize your footer
+                            content.</p>
+                    </div>
+                    <div class="col l4 offset-l2 s12">
+                        <h5 class="yellow-text">Links</h5>
+                        <ul>
+                            <li><a class="yellow-text" href="#!">Link 1</a></li>
+                            <li><a class="yellow-text" href="#!">Link 2</a></li>
+                            <li><a class="yellow-text" href="#!">Link 3</a></li>
+                            <li><a class="yellow-text" href="#!">Link 4</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <div class="container yellow-text">
+                    © 2014 Copyright Text
+                    <a class="yellow-text right" href="#!">More Links</a>
+                </div>
+            </div>
+        </footer>
 
 
 
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
-        crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
-    <script src="./assets/data.js"></script>
-    
+        <script src="./assets/data.js"></script>
 
 
-    <script>
 
-document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.sidenav');
-    var instances = M.Sidenav.init(elems);
-  });
+        <script>
+
+            document.addEventListener('DOMContentLoaded', function () {
+                var elems = document.querySelectorAll('.sidenav');
+                var instances = M.Sidenav.init(elems);
+            });
 
 
-    </script>
+
+    document.addEventListener('DOMContentLoaded', function () {
+        var elems = document.querySelectorAll('.dropdown-trigger');
+        var instances = M.Dropdown.init(elems);
+    });
+
+
+
+
+
+        </script>
 
 </body>
 

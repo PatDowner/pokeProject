@@ -1,0 +1,137 @@
+.normal {
+  background-color: grey;
+}
+
+.fire {
+  background-color: red;
+}
+
+.grass {
+  background-color: green;
+}
+
+.electric {
+  background-color: yellow;
+  color: black;
+}
+
+.psychic {
+  background-color: purple;
+}
+
+.ice {
+  background-color: rgb(118, 230, 255);
+}
+
+.water {
+  background-color: blue;
+}
+
+.bug {
+  background-color: rgb(129, 255, 129);
+}
+
+.dragon {
+  background-color: indianred;
+}
+
+.ground {
+  background-color: brown;
+}
+
+.fighting {
+  background-color: rgb(128, 69, 69);
+}
+
+.rock {
+  background-color: burlywood;
+}
+
+.steel {
+  background-color: rgb(199, 199, 199);
+}
+
+.ghost {
+  background-color: rgb(101, 21, 101);
+}
+
+.fairy {
+  background-color: pink;
+}
+
+.flying {
+  background-color: plum;
+}
+
+.dark {
+  background-color: rgb(60, 0, 0);
+}
+
+.poison {
+  background-color: rgb(101, 56, 101);
+}
+
+.position {
+  margin-top: 10%;
+  background-color: rgb(218, 173, 77);
+  border-radius: 50px 50px 50px 50px;
+}
+
+.left {
+  margin-left: 100px;
+}
+
+#firstCard {
+  text-align: center;
+  display: block;
+  /* width: 100%; */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#pokeName {
+  text-transform: uppercase;
+}
+
+.radius {
+  border-radius: 50px 50px 50px 50px;
+}
+
+#abilities {
+  font-style: italic;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size-adjust: initial;
+  font-weight: 600;
+}
+
+#pokemonStats {
+  font-style: italic;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size-adjust: initial;
+  font-weight: 600;
+}
+
+#pokemonInfo {
+  font-style: italic;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size-adjust: initial;
+  font-weight: 600;
+  ;
+}
+
+.dropdown-content {
+  background-color: yellow;
+  font-style: italic;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size-adjust: initial;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.abilityName {
+  text-transform: capitalize;
+}
+
+.statNames {
+  text-transform: capitalize;
+}
