@@ -1,82 +1,133 @@
 // setting up some arrays variables to populate later
-let fourFrom150 = []
-let randomNum
+let pick4 = []
+let random
+let qType = ['name', 'types']
+let type
 let answers = []
+let answer
+let score = 0
+document.getElementById('score').innerHTML = `Score: ${score}`
 
+// get 4 new pokemon (and a correct one) to pull for a question
+const newValues = () => {
+  pick4 = []
 
-const newQuestion = () => {
-
-  // pick 4 numbers out of the 150 pokemon IDs in the initial set of pokemon to be our answer choices, add them to the array fourFrom150
+  // picks 4 values for the pick4 array
   for (let i = 0; i < 4; i++) {
     let y = Math.floor(Math.random() * 150) + 1
-    console.log(y)
-    fourFrom150.push(y)
+    // this if statement makes sure that we're not duplicating values
+    if (pick4.includes(y)) {
+      // console.log('try again')
+      i--
+    } else {
+      // console.log('accepted number')
+      pick4.push(y)
+    }
   }
 
-  // generates which will be our correct answer based on position within the 4 possible answers in fourFrom150, this will determine which image we pull.
-  for (let i = 0; i < 4; i++) {
-    randomNum = Math.floor(Math.random() * 4)
-  }
+  console.log(pick4)
 
-  console.log(randomNum)
+  // Of those 4, generates which will be our correct answer
+  random = Math.floor(Math.random() * 4)
+  // uses that random number to pull the value of our correct answer
+  console.log(random)
+  random = pick4[random]
+  console.log(random)
 
-  console.log(fourFrom150)
+  // determines which question type will be generated
+  type = Math.floor(Math.random() * 2)
+  console.log('q type index: ' + type)
+  type = qType[type]
+  console.log('q type value: ' + type)
 
-
+  // end newValues
 }
 
+// this generates the data from the pick4 value to get the name value (aka: pokemon ID# converted to pokemon names)
+const answerButtons = (x, y, z) => {
+  // pass the values through from newValues
+  pick4 = x
+  random = y
+  type = z
 
-// Takes the pokemon ID#s from the fourFrom150 and puts their corresponding names into array answers
-const answerButtons = () => {
+  // confirms if values got passed through
+  console.log(pick4)
+  console.log(random)
+  console.log(type)
 
+  answers = []
+
+  // clear out the div to make room for new questions
+  document.getElementById('answersDiv').innerHTML = ''
+
+  // some how in this loop the answer order shifts. Same overall answers, but shifted by 1 (with the last one looped around to take the first position).
+  // loop to make answer buttons
   for (let i = 0; i < 4; i++) {
-    axios.get(`https://pokeapi.co/api/v2/pokemon/${fourFrom150[i]}`)
+    // console.log(i)
+    axios.get(`https://pokeapi.co/api/v2/pokemon/${pick4[i]}`)
       .then(res => {
 
-        // console.log(res.data)
-        answers.push(res.data.name)
+        if (type = 'name') {
+          type = res.data.name
+          console.log(res.data.name)
+        } else if (type = 'types') {
+          type = res.data.types[0].type.name
+          console.log(res.data.types[0].type.name)
+        }
+        console.log(type)
+        answers.push(type)
 
         // creates a button with that pokemon's name to put in the answers section of the HTML
         answersElem = document.createElement('button')
         answersElem.className = "answerBtn"
-        answersElem.dataset.pokeName = res.data.name
-        answersElem.dataset.number = i
+        answersElem.dataset.pokeData = type
+        answersElem.dataset.number = res.data.id
         answersElem.innerHTML = `
-      ${res.data.name}
+      ${type}
       `
-        document.getElementById('answers').append(answersElem)
+        document.getElementById('answersDiv').append(answersElem)
 
       })
-
+      .catch(err => { console.log(err) })
   }
-  document.getElementById('answersDiv').classList.add('hide')
+  pick4 = answers
+  console.log(pick4)
 
+  axios.get(`https://pokeapi.co/api/v2/pokemon/${random}`)
+    .then(res => {
+      random = res.data.type
+      console.log(random)
+      answer = random
+      console.log(answer)
+    })
+    .catch(err => { console.log(err) })
+
+  // end answerButtons
 }
 
+const questionImage = (y) => {
+  // pass through value from answerButtons
+  random = y
+  console.log(random)
 
-// This figures out the image to populate into the question by reverse engineering the question from our predetermined correct answer.
-const questionInfo = () => {
-
-  // answers[randomNum] tells us the name which the pokemon from the answers we are designating as our correct answer
-  axios.get(`https://pokeapi.co/api/v2/pokemon/${answers[randomNum]}`)
+  axios.get(`https://pokeapi.co/api/v2/pokemon/${random}`)
     .then(res => {
-      console.log(answers)
-      console.log(res.data)
       console.log(res.data.sprites.back_default)
-
-      // go pull the sprite image that matches the name of the pokemon that we've designated as the correct answer and puts its image on the screen
       document.getElementById('questionIMG').innerHTML = `
       <img src="${res.data.sprites.back_default}">
       `
-
     })
+    .catch(err => { console.log(err) })
 
-
-
+  console.log(random)
+  // end questionImage
 }
 
-// generate the answer buttons
-answerButtons()
+
+
+
+
+
 
 // when we click start...
 document.getElementById('startBtn').addEventListener('click', event => {
@@ -84,27 +135,35 @@ document.getElementById('startBtn').addEventListener('click', event => {
   document.getElementById('instructionsDiv').classList.add('hide')
   document.getElementById('questionsDiv').classList.remove('hide')
   document.getElementById('answersDiv').classList.remove('hide')
-  // generate a sprite for the question and shows the question div
-  newQuestion()
-  questionInfo()
-  
+
+  newValues()
+  answerButtons(pick4, random, type)
+  questionImage(random)
+  // console.log(pick4)
+  // console.log(random)
 })
 
 // global event listener
 document.addEventListener('click', event => {
-  
+
   event.preventDefault()
-  
+
   if (event.target.classList.contains('answerBtn')) {
     console.log('works')
-    if (event.target.dataset.pokeName === answers[randomNum]) {
+    if (event.target.dataset.pokeData === random) {
       console.log('correct')
-      newQuestion()
-      questionInfo()
+      document.getElementById('feedback').innerText = 'correct'
+      score++
+      document.getElementById('score').innerHTML = `Score: ${score}`
+      newValues()
+      answerButtons(pick4, random)
+      questionImage(random)
     } else {
       console.log('wrong')
-      newQuestion()
-      questionInfo()
+      document.getElementById('feedback').innerText = 'wrong'
+      newValues()
+      answerButtons(pick4, random)
+      questionImage(random)
     }
   }
 
