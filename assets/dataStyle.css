@@ -91,6 +91,8 @@
 
 #pokeName {
   text-transform: uppercase;
+  font-size: large;
+  font-weight: bold;
 }
 
 .radius {
