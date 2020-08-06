@@ -128,3 +128,10 @@
   text-transform: capitalize;
 }
 
+.abilityName {
+  text-transform: capitalize;
+}
+
+.statNames {
+  text-transform: capitalize;
+}
