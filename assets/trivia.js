@@ -139,7 +139,6 @@ const questionImage = (y) => {
 const endGame = () => {
   document.getElementById('questionsDiv').classList.add('hide')
   document.getElementById('answersDiv').classList.add('hide')
-  document.getElementById('finished').classList.remove('hide')
 
   if (score > highScore) {
     // set user's score to be the current highScore
@@ -256,7 +255,7 @@ document.addEventListener('click', event => {
     console.log('works')
     if (event.target.dataset.pokeName === random) {
       console.log('correct')
-      document.getElementById('feedback').innerText = 'correct'
+      document.getElementById('feedback').innerText = 'Previous question: Correct!'
       score++
       document.getElementById('score').innerHTML = `Score: ${score}`
       newValues()
@@ -264,7 +263,7 @@ document.addEventListener('click', event => {
       questionImage(random)
     } else {
       console.log('wrong')
-      document.getElementById('feedback').innerText = 'wrong'
+      document.getElementById('feedback').innerText = 'Previous question: Wrong!'
       newValues()
       answerButtons(pick4, random)
       questionImage(random)
