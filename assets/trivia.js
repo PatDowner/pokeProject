@@ -3,21 +3,24 @@ let fourFrom150 = []
 let randomNum
 
 
-// pick 4 numbers out of the 150 to be our answer choices, add them to the array
-for (let i = 0; i < 4; i++) {
-  let y = Math.floor(Math.random() * 150) + 1
-  console.log(y)
-  fourFrom150.push(y)
+const newQuestion = () => {
+
+  // pick 4 numbers out of the 150 to be our answer choices, add them to the array
+  for (let i = 0; i < 4; i++) {
+    let y = Math.floor(Math.random() * 150) + 1
+    console.log(y)
+    fourFrom150.push(y)
+  }
+  
+  
+  for (let i = 0; i < 4; i++) {
+    randomNum = Math.floor(Math.random() * 4)
+  }
+  
+  console.log(randomNum)
+  
+  console.log(fourFrom150)
 }
-
-
-for (let i = 0; i < 4; i++) {
-  randomNum = Math.floor(Math.random() * 4)
-}
-
-console.log(randomNum)
-
-console.log(fourFrom150)
 
 let answers = []
 
@@ -85,6 +88,7 @@ const correctInfo = () => {
 
 }
 
+newQuestion()
 myFunction()
 
 document.getElementById('startBtn').addEventListener('click', event => {
@@ -104,10 +108,22 @@ if (event.target.classList.contains('answerBtn')) {
   console.log('works')
   if (event.target.dataset.pokeName === answers[randomNum]) {
     console.log('correct')
+    newQuestion()
+    correctInfo()
+   
   } else {
     console.log('wrong')
+    newQuestion()
+    correctInfo()
+    
   }
+
+  
+  myFunction()
 }
+
+
+
 
 })
 
