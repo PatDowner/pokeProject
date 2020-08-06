@@ -53,12 +53,14 @@ const myFunction = () => {
       
       
       answersElem = document.createElement('button')
+      answersElem.className = "answerBtn"
       answersElem.dataset.pokeName = res.data.name
       answersElem.dataset.number = i
       answersElem.innerHTML = `
       ${res.data.name}
       `
       document.getElementById('answers').append(answersElem)
+      document.getElementById('answers').classList.add('hide')
       
     })
     
@@ -87,11 +89,31 @@ myFunction()
 
 document.getElementById('startBtn').addEventListener('click', event => {
   event.preventDefault()
-  
+  document.getElementById('whosThat').innerText = `Who's That Pokemon?`
   correctInfo()
-  
+  document.getElementById('answers').classList.remove('hide')
+  document.getElementById('startBtn').classList.add('hide')
   
 })
+
+
+document.addEventListener('click', event => {
+event.preventDefault()
+
+if (event.target.classList.contains('answerBtn')) {
+  console.log('works')
+  if (event.target.dataset.pokeName === answers[randomNum]) {
+    console.log('correct')
+  } else {
+    console.log('wrong')
+  }
+}
+
+})
+
+
+
+
 
 
 // // set a variable that selects a random position in the main array. This will determine which position in the array has our correct answer
