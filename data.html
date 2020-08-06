@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resources</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -41,7 +41,7 @@
                 <li><a class="yellow-text" href="resources.html">Pokemon Resources</a></li>
                 <li><a class="yellow-text" href="aboutus.html">About Us</a></li>
             </ul>
-    
+
             <ul class="sidenav" id="mobile-demo">
                 <li><a class="yellow-text" href="data.html">Pokemon Data</a></li>
                 <li><a class="yellow-text" href="cards.html">Pokemon Cards</a></li>
@@ -82,22 +82,28 @@
         </div>
     </div>
 
-<footer class="page-footer blue darken-4">
+
+
+
     <div class="container">
+
         <div class="row">
-            <div class="col l6 s12">
-                <h5 class="yellow-text">Thank you for viewing</h5>
-                <p class="yellow-text">UCI Irvine Coding Bootcamp Project 1</p>
-            </div>
-            <div class="col l4 offset-l2 s12">
-                <h5 class="yellow-text">Links</h5>
-                <ul>
-                    <li><a class="yellow-text" href="data.html">Pokemon Data</a></li>
-                    <li><a class="yellow-text" href="cards.html">Pokemon Cards</a></li>
-                    <li><a class="yellow-text" href="trivia.html">Pokemon Trivia</a></li>
-                    <li><a class="yellow-text" href="resources.html">Pokemon Resources</a></li>
-                    <li><a class="yellow-text" href="aboutus.html">About Us</a></li>
-                </ul>
+            <div id="firstCard" class="col s12 l3">
+
+
+                <div id="test" class="card-content red-text radius card yellow darken-1">
+                    <div id="pokemonPicture" class="card-image">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png"
+                            alt="pokeball">
+                    </div>
+                    <div id="pokemonInfo" class="card-content">
+
+                    </div>
+
+
+                </div>
+
+
             </div>
 
             <div class="col s12 l9">
@@ -114,13 +120,39 @@
                         <div id="abilities" class="card-content red-text">
                             <span class="card-title">Abilities</span>
 
-        
-        
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+
+
+
+        </div>
     </div>
-    <div class="footer-copyright">
-        <div class="container yellow-text">
-            © 2020 Copyright Pokemon Fans
-            <a class="yellow-text right" href="index.html">Back to top</a>
+
+
+    <footer class="page-footer blue darken-4">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="yellow-text">Thank you for viewing</h5>
+                    <p class="yellow-text">UCI Irvine Coding Bootcamp Project 1</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="yellow-text">Links</h5>
+                    <ul>
+                        <li><a class="yellow-text" href="data.html">Pokemon Data</a></li>
+                        <li><a class="yellow-text" href="cards.html">Pokemon Cards</a></li>
+                        <li><a class="yellow-text" href="trivia.html">Pokemon Trivia</a></li>
+                        <li><a class="yellow-text" href="resources.html">Pokemon Resources</a></li>
+                        <li><a class="yellow-text" href="aboutus.html">About Us</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
         <div class="footer-copyright">
             <div class="container yellow-text">
@@ -148,21 +180,21 @@
             var elems = document.querySelectorAll('.sidenav');
             var instances = M.Sidenav.init(elems);
         });
-        
 
 
-     </script>
 
-     <script>
+    </script>
+
+    <script>
 
         document.addEventListener('DOMContentLoaded', function () {
-                var elems = document.querySelectorAll('.dropdown-trigger');
-                var instances = M.Dropdown.init(elems);
-            });
+            var elems = document.querySelectorAll('.dropdown-trigger');
+            var instances = M.Dropdown.init(elems);
+        });
 
 
 
-     </script>
+    </script>
 
 </body>
 
