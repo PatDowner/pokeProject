@@ -40,46 +40,40 @@
 <div class="container">
 
   <h1>Pokemon Trivia Quiz</h1>
-  
-  
 
   
-<p id="test"></p>
-
-<ul id="answers"></ul>
-
-<p id="correctAnswer"></p>
-
-
-
-<!-- Where we put any instructions. E.g. do we want it to be timed?? Hide this once we move into the actual quiz -->
-<div class="instructions">
-  <div>
-    <!-- instructions text goes here -->
+  <!-- Where we put any instructions. E.g. do we want it to be timed?? Hide this once we move into the actual quiz -->
+  <div id="instructionsDiv">
+    <div>
+      <!-- instructions text goes here -->
+      Quiz instructions go here
+    </div>
+    <button id="startBtn">
+      start<!-- start button goes here -->
+    </button>
   </div>
-  <button id="startBtn">
-    start<!-- start button goes here -->
-  </button>
-</div>
-
-<!-- question div -->
-<!-- hidden on landing, shown after clicking startBtn -->
-<div class="questions">
-  <!-- we'll want to populate questions here -->
-</div>
-
-<!-- answers div -->
-<!-- hidden on landing, shown after clicking startBtn -->
-<div class="answers">
+  
+  <!-- question div -->
+  <!-- hidden on landing, shown after clicking startBtn -->
+  <div id="questionsDiv" class="hide">
+    <p>Which Pokemon is this?</p>
+    <p id="questionIMG"></p>
+    <!-- we'll want to populate questions here -->
+  </div>
+  
+  <!-- answers div -->
+  <!-- hidden on landing, shown after clicking startBtn -->
+  <div id="answersDiv" class="hide">
+    <ul id="answers"></ul>
   <!-- we'll want to put answers here that correspond to the current question shown above -->
 </div>
 
 <!-- Quiz finish screen -->
 <!-- hidden on landing, shown after end of quiz -->
-<div class="finish">
+<div id="finish" class="hide">
   <!-- display a score of some kind -->
   <!-- store/recall high score like we did in our quiz HW?? -->
-  <button id="startOver">
+  <button id="startOver" class="hide">
     <!-- put a start over button here that will reset everything (clear score, re-hide/show appropriate divs, etc) -->
   </button>
 </div>
