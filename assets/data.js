@@ -15,12 +15,6 @@ for (i = 0; i < searchHistory.length; i++) {
 
   document.getElementById('dropdown1').append(pokeElem)
 
-
-
-  // $('#dropdown1').append(`
-  //   <li class="recentPokemon red-text">${searchHistory[i]}</li>
-  // `)
-
 }
 
 
@@ -29,7 +23,7 @@ for (i = 0; i < searchHistory.length; i++) {
 const storePokemon = () => {
 
   // Push the users searched city into the searchHistory array that we have
-  // searchHistory.push(document.getElementById('city').value)
+
   searchHistory.push(document.getElementById('pokemon').value)
 
   // Now store it into the local storage
@@ -40,7 +34,6 @@ const storePokemon = () => {
   // give that element the following class names
   searchHistoryElem.className = 'recentPokemon red-text'
   searchHistoryElem.dataset.pokemon = document.getElementById('pokemon').value
-  // also give it the unique data attribute that will be the exact name of the city that user searched
   searchHistoryElem.innerHTML = `
     ${document.getElementById('pokemon').value}
     `
@@ -49,14 +42,7 @@ const storePokemon = () => {
   // clear out the search form
   document.getElementById('pokemon').value = ''
 
-
-
-  // $('#dropdown1').append(`
-  //   <li class="recentPokemon red-text">${$('#pokemon').val()}</li>
-  // `)
-
 }
-
 
 
 const getPokemon = pokemon => {
@@ -72,12 +58,6 @@ const getPokemon = pokemon => {
       `
 
 
-      // $('#pokemonPicture').html(`
-      // <h4 id="pokeName">${pokemon}</h4>
-      //   <img src="${result.data.sprites.front_default}" alt="Pokemon Front Image">
-      // `)
-
-
 
       document.getElementById('pokemonInfo').innerHTML = `
       <p>Type: <button id="typeColor" class="btn waves-effect waves-light">${result.data.types[0].type.name}</button> </p>
@@ -85,22 +65,8 @@ const getPokemon = pokemon => {
       <p>Weight: ${result.data.weight}lbs </p>
       `
 
-      // $('#pokemonInfo').html(`
-      // <p>Type: <button id="typeColor" class="btn waves-effect waves-light">${result.data.types[0].type.name}</button> </p>
-      // <p>Height: ${result.data.height}ft </p>
-      // <p>Weight: ${result.data.weight}lbs </p>
-      // `)
-
 
       document.getElementById('typeColor').classList.add(`${result.data.types[0].type.name}`)
-
-      // $('#typeColor').addClass(`${result.data.types[0].type.name}`)
-
-
-
-      // work on this later!!!
-      // $('#test').removeClass(`yellow ${result.data.types[0].type.name}`)
-      // $('#test').addClass(`${result.data.types[0].type.name}`)
 
 
       document.getElementById('pokemonStats').innerHTML = `
@@ -116,23 +82,12 @@ const getPokemon = pokemon => {
       `
 
 
-      // $('#pokemonStats').html(`
-      //   <p class="statNames">Stats:
-      //   <br>
-      //   Base: ${result.data.stats[0].stat.name}: ${result.data.stats[0].base_stat} <br>
-      //   Base: ${result.data.stats[1].stat.name}: ${result.data.stats[1].base_stat} <br> 
-      //   Base: ${result.data.stats[2].stat.name}: ${result.data.stats[2].base_stat} <br>
-      //   Base: ${result.data.stats[3].stat.name}: ${result.data.stats[3].base_stat} <br>
-      //   Base: ${result.data.stats[4].stat.name}: ${result.data.stats[4].base_stat} <br>
-      //   Base: ${result.data.stats[5].stat.name}: ${result.data.stats[5].base_stat} <br>
-      //   </p>
-      // `)
 
 
       document.getElementById('abilities').innerHTML = ``
 
 
-      // $('#abilities').html('')
+ 
 
       for (i = 0; i < result.data.abilities.length; i++) {
         axios.get(`${result.data.abilities[i].ability.url}`)
@@ -147,9 +102,6 @@ const getPokemon = pokemon => {
             `
 
             document.getElementById('abilities').append(abilityElem)
-
-
-            // $('#abilities').append(`<p> <span class="abilityName">${res.data.name}</span>: ${res.data.effect_entries[1].effect}</p><br>`)
 
           })
           .catch(err => {
@@ -177,23 +129,7 @@ document.getElementById('searchPokemon').addEventListener('click', event => {
 
   storePokemon()
 
-  
-
 })
-
-
-
-// $('#searchPokemon').click(() => {
-//   event.preventDefault()
-
-
-//   getPokemon($('#pokemon').val())
-
-//   storePokemon()
-
-//   $('#pokemon').val('')
-// })
-
 
 
 
@@ -202,27 +138,9 @@ document.addEventListener('click', event => {
 
   if (event.target.classList.contains('recentPokemon')) {
 
-    
-    
     getPokemon(event.target.dataset.pokemon)
   }
 
 })
-
-
-// $('.recentPokemon').click(function () {
-//   event.preventDefault()
-//   console.log($(this).text())
-
-//   getPokemon($(this).text())
-
-
-// })
-
-
-
-
-
-
 
 
