@@ -32,7 +32,7 @@ let score = 0
 document.getElementById('score').innerHTML = `Score: ${score}`
 
 // Set timer start value
-let seconds = 10
+let seconds = 90
 
 // get 4 new pokemon (and a correct one) to pull for a question
 const newValues = () => {
@@ -91,7 +91,7 @@ const answerButtons = (x, y) => {
 
         // creates a button with that pokemon's name to put in the answers section of the HTML
         answersElem = document.createElement('button')
-        answersElem.className = "answerBtn"
+        answersElem.className = "answerBtn waves-effect waves-light btn"
         answersElem.dataset.pokeName = res.data.name
         answersElem.dataset.number = res.data.id
         answersElem.innerHTML = `
@@ -124,9 +124,9 @@ const questionImage = (y) => {
 
   axios.get(`https://pokeapi.co/api/v2/pokemon/${random}`)
     .then(res => {
-      console.log(res.data.sprites.back_default)
+      console.log(res.data.sprites.other.dream_world.front_default)
       document.getElementById('questionIMG').innerHTML = `
-      <img src="${res.data.sprites.back_default}">
+      <img id="pokeIMG" src="${res.data.sprites.other.dream_world.front_default}" class="brightness">
       `
     })
     .catch(err => { console.log(err) })
@@ -253,24 +253,41 @@ document.addEventListener('click', event => {
 
   if (event.target.classList.contains('answerBtn')) {
     console.log('works')
+
+
+
     if (event.target.dataset.pokeName === random) {
+      document.getElementById('pokeIMG').classList.remove('brightness')
       console.log('correct')
       document.getElementById('feedback').innerText = 'Previous question: Correct!'
       score++
       document.getElementById('score').innerHTML = `Score: ${score}`
-      newValues()
-      answerButtons(pick4, random)
-      questionImage(random)
+      setTimeout(() => {
+        if (seconds > 0) {
+          newValues()
+          answerButtons(pick4, random)
+          questionImage(random)
+        } else {
+          endGame()
+        }
+      }, 750)
     } else {
+      document.getElementById('pokeIMG').classList.remove('brightness')
       console.log('wrong')
       document.getElementById('feedback').innerText = 'Previous question: Wrong!'
-      newValues()
-      answerButtons(pick4, random)
-      questionImage(random)
+      setTimeout(() => {
+        if (seconds > 0) {
+          newValues()
+          answerButtons(pick4, random)
+          questionImage(random)
+        } else {
+          endGame()
+        }
+      }, 750)
     }
+
+
   }
-
-
 
 
 

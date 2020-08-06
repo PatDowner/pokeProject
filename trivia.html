@@ -39,26 +39,26 @@
   </nav>
 
   <!-- Container of entire quiz functionality -->
-  <div class="container">
+  <main class="container">
 
+    <h1 class="center-align">Pokemon Trivia Quiz</h1>
 
     <!-- Stats header (high score, current score, timer) -->
-    <div id="stats">
+    <div id="stats" class="row">
 
-      <div id="highScore"></div>
-      <div id="score"></div>
-      <div id="countDown">Time left:<br><span id="time">90</span>&nbsp;seconds</div>
+      <div id="highScore" class="col s4 red statsCol"></div>
+      <div id="score" class="col s4 blue statsCol"></div>
+      <div id="countDown" class="col s4 yellow statsCol">Time left:<br><span id="time">90</span>&nbsp;seconds</div>
     </div>
 
     <!-- Where we put any instructions. E.g. do we want it to be timed?? Hide this once we move into the actual quiz -->
-    <div id="instructionsDiv">
+    <div id="instructionsDiv" class="white">
       <div>
         <!-- title of quiz -->
-        <h1>Pokemon Trivia Quiz</h1>
         <!-- instructions text goes here -->
         Try identify as many Pokemon shown before time runs out. Timer starts when you click the start quiz button.
       </div>
-      <button id="startBtn">
+      <button id="startBtn" class="waves-effect waves-light btn">
         Start Quiz
         <!-- start button goes here -->
       </button>
@@ -71,7 +71,7 @@
 
     <!-- question div -->
     <!-- hidden on landing, shown after clicking startBtn -->
-    <div id="questionsDiv" class="hide">
+    <div id="questionsDiv" class="hide white">
       <p id="question">Who's that Pokemon?</p>
       <p id="questionIMG"></p>
       <!-- we'll want to populate questions here -->
@@ -79,7 +79,7 @@
 
     <!-- answers div -->
     <!-- hidden on landing, shown after clicking startBtn -->
-    <div id="answersDiv" class="hide">
+    <div id="answersDiv" class="hide white">
       <!-- we'll want to put answers here that correspond to the current question shown above -->
     </div>
 
@@ -87,7 +87,7 @@
 
     <!-- Quiz finish screen -->
     <!-- hidden on landing, shown after end of quiz -->
-    <div id="finished">
+    <div id="finished" class="white">
       <!-- Text that's displayed for your final score -->
       <div>
         <h3 id="finalScore" class="hide"></h3>
@@ -103,16 +103,19 @@
         </div>
         <div>
           <!-- save high score button -->
-          <button id="save" class="save">Save High Score</button>
+          <button id="save" class="save waves-effect waves-light btn">Save High Score</button>
         </div>
       </form>
 
-      <button id="startOver" class="hide">Start Over</button>
+      <button id="startOver" class="hide waves-effect waves-light btn">Start Over</button>
     </div>
 
 
-
-
+    
+    
+    
+        <!-- end of container div -->
+      </main>
 
 
 
@@ -158,9 +161,6 @@
 
 
 
-
-    <!-- end of container div -->
-  </div>
 
 
   <!-- Materialize Script -->

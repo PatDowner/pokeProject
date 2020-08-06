@@ -1,9 +1,34 @@
-.container {
-  margin: 20px;
+body {
+  background-color: grey;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
 }
 
 .hide {
   display: none;
+}
+
+#stats {
+  margin-bottom: 0px;
+}
+
+.statsCol {
+  height: 40px;
+  text-align: center;
+}
+
+button {
+  margin: 20px;
+}
+
+.brightness {
+  filter: brightness(0);
+  -webkit-filter: brightness(0);
 }
 
 footer {
