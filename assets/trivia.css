@@ -1,7 +1,49 @@
-.container {
-  margin: 20px;
+body {
+  background-color: grey;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
 }
 
 .hide {
   display: none;
+}
+
+#stats {
+  margin-bottom: 0px;
+}
+
+.statsCol {
+  height: 40px;
+  text-align: center;
+}
+
+button {
+  margin: 20px;
+}
+
+#questionIMG {
+  height: 300px;
+}
+#pokeIMG {
+  width: 75%;
+  max-height: 300px;
+}
+
+.brightness {
+  filter: brightness(0);
+  -webkit-filter: brightness(0);
+}
+
+#ashPika {
+  height: 50%;
+  vertical-align: center;
+}
+
+footer {
+  margin-top: 50px;
 }
