@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pokecards Cards</title>
+  <title>Pokemon Trivia</title>
   <!-- reset css -->
   <link rel="stylesheet" href="./assets/reset.css">
   <!-- Materialize CDN -->
@@ -18,74 +18,140 @@
   <!-- nav bar -->
   <nav>
     <div class="nav-wrapper blue darken-4">
-      <a href="index.html" class="brand-logo yellow-text"><i class="material-icons">home</i>Home</a>
+      <a id="index" href="index.html" class="brand-logo yellow-text"><i class="material-icons">home</i>Home</a>
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
-        <li><a class="yellow-text" href="data.html">Pokemon Data</a></li>
-        <li><a class="yellow-text" href="cards.html">Pokemon Cards</a></li>
-        <li><a class="yellow-text" href="trivia.html">Pokemon Trivia</a></li>
-        <li><a class="yellow-text" href="resources.html">Pokemon Resources</a></li>
-        <li><a class="yellow-text" href="aboutus.html">About Us</a></li>
+        <li><a id="data" class="yellow-text" href="data.html">Pokemon Data</a></li>
+        <li><a id="cards" class="yellow-text" href="cards.html">Pokemon Cards</a></li>
+        <li><a id="trivia" class="yellow-text" href="trivia.html">Pokemon Trivia</a></li>
+        <li><a id="resources" class="yellow-text" href="resources.html">Pokemon Resources</a></li>
+        <li><a id="aboutus" class="yellow-text" href="aboutus.html">About Us</a></li>
       </ul>
-
+  
       <ul class="sidenav" id="mobile-demo">
-        <li><a class="yellow-text" href="data.html">Pokemon Data</a></li>
-        <li><a class="yellow-text" href="cards.html">Pokemon Cards</a></li>
-        <li><a class="yellow-text" href="trivia.html">Pokemon Trivia</a></li>
-        <li><a class="yellow-text" href="resources.html">Pokemon Resources</a></li>
-        <li><a class="yellow-text" href="aboutus.html">About Us</a></li>
+        <li><a id="dataMobile" class="yellow-text" href="data.html">Pokemon Data</a></li>
+        <li><a id="cardsMobile" class="yellow-text" href="cards.html">Pokemon Cards</a></li>
+        <li><a id="triviaMobile" class="yellow-text" href="trivia.html">Pokemon Trivia</a></li>
+        <li><a id="resourcesMobile" class="yellow-text" href="resources.html">Pokemon Resources</a></li>
+        <li><a id="aboutusMobile" class="yellow-text" href="aboutus.html">About Us</a></li>
       </ul>
     </div>
   </nav>
-<div class="container">
 
-  <h1>Pokemon Trivia Quiz</h1>
-  <h2 id="score"></h2>
-  <div id="test"></div>
-  <!-- Where we put any instructions. E.g. do we want it to be timed?? Hide this once we move into the actual quiz -->
-  <div id="instructionsDiv">
-    <div>
-      <!-- instructions text goes here -->
-      Quiz instructions go here
+
+  <!-- Container of entire quiz functionality -->
+  <main class="container">
+
+    <h1 class="center-align">Pokemon Trivia Quiz</h1>
+
+    <!-- Stats header (high score, current score, timer) -->
+    <div id="stats" class="row">
+
+      <div id="highScore" class="col s4 red statsCol"></div>
+      <div id="score" class="col s4 blue statsCol"></div>
+      <div id="countDown" class="col s4 yellow statsCol">Time left:<br><span id="time">90</span>&nbsp;seconds</div>
     </div>
-    <button id="startBtn">
-      start<!-- start button goes here -->
-    </button>
-  </div>
-  
-<!-- feedback div -->
-<div id="feedback">
-  <!-- correct/wrong message -->
-</div>
 
-  <!-- question div -->
-  <!-- hidden on landing, shown after clicking startBtn -->
-  <div id="questionsDiv" class="hide">
-    <p>Who's that Pokemon?</p>
-    <p id="questionIMG"></p>
-    <!-- we'll want to populate questions here -->
-  </div>
-  
-  <!-- answers div -->
-  <!-- hidden on landing, shown after clicking startBtn -->
-  <div id="answersDiv" class="hide">
-  <!-- we'll want to put answers here that correspond to the current question shown above -->
-</div>
+    <!-- Where we put any instructions. E.g. do we want it to be timed?? Hide this once we move into the actual quiz -->
+    <div id="instructionsDiv" class="white">
+      <div>
+        <!-- title of quiz -->
+        <!-- instructions text goes here -->
+        Try identify as many Pokemon shown before time runs out. Timer starts when you click the start quiz button.
+      </div>
+      <button id="startBtn" class="waves-effect waves-light btn">
+        Start Quiz
+        <!-- start button goes here -->
+      </button>
+    </div>
 
+    <!-- feedback div -->
+    <div id="feedback">
+      <!-- correct/wrong message -->
+    </div>
 
+    <!-- question div -->
+    <!-- hidden on landing, shown after clicking startBtn -->
+    <div id="questionsDiv" class="hide white">
+      <p id="question">Who's that Pokemon?</p>
+      <p id="questionIMG"></p>
+      <!-- we'll want to populate questions here -->
+    </div>
 
-<!-- Quiz finish screen -->
-<!-- hidden on landing, shown after end of quiz -->
-<div id="finish" class="hide">
-  <!-- display a score of some kind -->
-  <!-- store/recall high score like we did in our quiz HW?? -->
-  <button id="startOver" class="hide">
-    <!-- put a start over button here that will reset everything (clear score, re-hide/show appropriate divs, etc) -->
-  </button>
-</div>
+    <!-- answers div -->
+    <!-- hidden on landing, shown after clicking startBtn -->
+    <div id="answersDiv" class="hide white">
+      <!-- we'll want to put answers here that correspond to the current question shown above -->
+    </div>
 
 
 
+    <!-- Quiz finish screen -->
+    <!-- hidden on landing, shown after end of quiz -->
+    <div id="finished" class="white">
+      <!-- Text that's displayed for your final score -->
+      <div>
+        <h3 id="finalScore" class="hide"></h3>
+      </div>
+
+      <!-- form for inputting a username if you achieve a high score -->
+      <form id="userSet" class="hide">
+        <div id="input">
+          <!-- visible text -->
+          <label for="initials">Your initials: </label>
+          <!-- text input box -->
+          <input type="text" name="initials" id="initials" placeholder="your initials">
+        </div>
+        <div>
+          <!-- save high score button -->
+          <button id="save" class="save waves-effect waves-light btn">Save High Score</button>
+        </div>
+      </form>
+
+      <button id="startOver" class="hide waves-effect waves-light btn">Start Over</button>
+    </div>
+
+
+    
+    
+    <img id="ashPika" src="https://clipart.info/images/ccovers/1528080662Ash-Pikachu-Pokemon-Png.png">
+        <!-- end of container div -->
+      </main>
+
+
+
+
+
+
+
+
+
+    <footer class="page-footer blue darken-4">
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <h5 class="yellow-text">Thank you for viewing</h5>
+            <p class="yellow-text">UCI Irvine Coding Bootcamp Project 1</p>
+          </div>
+          <div class="col l4 offset-l2 s12">
+            <h5 class="yellow-text">Links</h5>
+            <ul>
+              <li><a id="dataFooter" class="yellow-text" href="data.html">Pokemon Data</a></li>
+              <li><a id="cardsFooter" class="yellow-text" href="cards.html">Pokemon Cards</a></li>
+              <li><a id="triviaFooter" class="yellow-text" href="trivia.html">Pokemon Trivia</a></li>
+              <li><a id="resourcesFooter" class="yellow-text" href="resources.html">Pokemon Resources</a></li>
+              <li><a id="aboutusFooter" class="yellow-text" href="aboutus.html">About Us</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container yellow-text">
+          © 2020 Copyright Pokemon Fans
+          <a class="yellow-text right" href="index.html">Back to top</a>
+        </div>
+      </div>
+    </footer>
 
 
 
@@ -96,19 +162,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-<!-- end of container div -->
-</div>
 
 
   <!-- Materialize Script -->
@@ -118,6 +171,80 @@
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
   <script src="assets/trivia.js"></script>
+
+  <script>
+
+      document.getElementById("index").onclick = function () {
+        location.href = "index.html";
+      };
+
+
+      document.getElementById("data").onclick = function () {
+        location.href = "data.html";
+      };
+
+
+      document.getElementById("cards").onclick = function () {
+        location.href = "cards.html";
+      };
+
+
+      document.getElementById("trivia").onclick = function () {
+        location.href = "trivia.html";
+      };
+
+      document.getElementById("resources").onclick = function () {
+        location.href = "resources.html";
+      };
+      document.getElementById("aboutus").onclick = function () {
+        location.href = "aboutus.html";
+      };
+
+      document.getElementById("dataMobile").onclick = function () {
+        location.href = "data.html.html";
+      };
+
+      document.getElementById("cardsMobile").onclick = function () {
+        location.href = "cards.html";
+      };
+
+      document.getElementById("triviaMobile").onclick = function () {
+        location.href = "trivia.html";
+      };
+
+      document.getElementById("resourcesMobile").onclick = function () {
+        location.href = "resources.html";
+      };
+
+      document.getElementById("aboutusMobile").onclick = function () {
+        location.href = "aboutus.html";
+      };
+
+      
+        document.getElementById("dataFooter").onclick = function () {
+          location.href = "data.html";
+        };
+
+        document.getElementById("cardsFooter").onclick = function () {
+          location.href = "cards.html";
+        };
+
+        document.getElementById("triviaFooter").onclick = function () {
+          location.href = "trivia.html";
+
+        };
+
+        document.getElementById("resourcesFooter").onclick = function () {
+          location.href = "resources.html";
+
+        };
+
+        document.getElementById("aboutusFooter").onclick = function () {
+          location.href = "aboutus.html";
+        };
+
+
+  </script>
 
 </body>
 
