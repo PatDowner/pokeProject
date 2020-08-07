@@ -22,17 +22,6 @@ main {
   margin-bottom: 0px;
 }
 
-/* sets size and font
-.statsCol {
-  font-size: 30px;
-  min-height: 65px;
-  text-align: center;
-} */
-
-/* .generalFont {
-  font-size: 20px;
-} */
-
 button {
   margin: 20px;
 }
@@ -43,6 +32,7 @@ button {
 #pokeIMG {
   width: 75%;
   max-height: 300px;
+  margin-top: 20px;
 }
 
 .brightness {
@@ -53,8 +43,8 @@ button {
   font-size: 32px;
 }
 #ashPika {
-  height: 50%;
-  vertical-align: center;
+  height: 200px;
+  text-align: center;
 }
 
 footer {

@@ -1,4 +1,4 @@
-ma// Set high score to zero
+// Set high score to zero
 let highScore = 0
 
 // user name indicates no high score until player has logged an initial high score
@@ -126,7 +126,7 @@ const questionImage = (y) => {
   axios.get(`https://pokeapi.co/api/v2/pokemon/${random}`)
     .then(res => {
       console.log(res.data.sprites.other.dream_world.front_default)
-      document.getElementById('questionIMG').replaceWith = `
+      document.getElementById('questionIMG').innerHTML = `
       <img id="pokeIMG" src="${res.data.sprites.other.dream_world.front_default}" class="brightness">
       `
     })
