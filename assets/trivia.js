@@ -1,4 +1,4 @@
-// Set high score to zero
+ma// Set high score to zero
 let highScore = 0
 
 // user name indicates no high score until player has logged an initial high score
@@ -15,7 +15,7 @@ for (let i = 0; i < pokeScoreLog.length; i++) {
 
 // Display current highScore in HTML
 document.getElementById('highScore').innerHTML = `
-<span class="card-title">High Score: ${highScore}</span>
+<span class="card-title">High Score:&nbsp;${highScore}</span>
 <p>User: ${userName}</p>
 `
 
@@ -92,7 +92,7 @@ const answerButtons = (x, y) => {
 
         // creates a button with that pokemon's name to put in the answers section of the HTML
         answersElem = document.createElement('button')
-        answersElem.className = "answerBtn waves-effect waves-light btn"
+        answersElem.className = "answerBtn waves-effect waves-light btn yellow darken-1 black-text"
         answersElem.dataset.pokeName = res.data.name
         answersElem.dataset.number = res.data.id
         answersElem.innerHTML = `
@@ -183,7 +183,7 @@ const endGame = () => {
 
       // Display current high score in HTML
       document.getElementById('highScore').innerHTML = `
-      <span class="card-title">High Score: ${highScore}</span>
+      <span class="card-title">High Score:&nbsp;${highScore}</span>
       <p>User: ${userName}</p>
       `
       // show start over button
