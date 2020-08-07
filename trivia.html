@@ -44,80 +44,128 @@
 
     <h1 class="center-align">Pokemon Trivia Quiz</h1>
 
+
     <!-- Stats header (high score, current score, timer) -->
-    <div id="stats" class="row">
+    <section id="stats" class="row">
 
-      <div id="highScore" class="col s4 red statsCol"></div>
-      <div id="score" class="col s4 blue statsCol"></div>
-      <div id="countDown" class="col s4 yellow statsCol">Time left:<br><span id="time">90</span>&nbsp;seconds</div>
-    </div>
-
-    <!-- Where we put any instructions. E.g. do we want it to be timed?? Hide this once we move into the actual quiz -->
-    <div id="instructionsDiv" class="white">
-      <div>
-        <!-- title of quiz -->
-        <!-- instructions text goes here -->
-        Try identify as many Pokemon shown before time runs out. Timer starts when you click the start quiz button.
+      <div class="col s12 m4">
+        <div class="card red darken-1">
+          <div id="highScore" class="card-content black-text">
+            <span class="card-title">High Score:&nbsp;0</span>
+            <p>User:</p>
+          </div>
+        </div>
       </div>
-      <button id="startBtn" class="waves-effect waves-light btn">
-        Start Quiz
-        <!-- start button goes here -->
-      </button>
-    </div>
 
-    <!-- feedback div -->
-    <div id="feedback">
-      <!-- correct/wrong message -->
-    </div>
+      <div class="col s6 m4">
+        <div class="card blue darken-1">
+          <div class="card-content black-text">
+            <span id="score" class="card-title">0 points</span>
+            <p>Current Score</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col s6 m4">
+        <div class="card yellow darken-1">
+          <div class="card-content black-text">
+            <span class="card-title"><span id="time">60</span> sec</span>
+            <p>Time Left</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Basic instructions and start button. Hides on click of start button  -->
+    <section id="instructionsDiv" class="row">
+      <div class="col s12">
+        <div class="card white">
+          <div class="card-content black-text">
+            <span class="card-title">Instructions</span>
+            <p>Try identify as many Pokemon shown before time runs out. Timer starts when you click the start quiz
+              button.</p>
+          </div>
+          <div class="card-action blue darken-1">
+            <a href="#" id="startBtn" class="yellow-text text-darken-1">Start Quiz</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
 
     <!-- question div -->
     <!-- hidden on landing, shown after clicking startBtn -->
-    <div id="questionsDiv" class="hide white">
-      <p id="question">Who's that Pokemon?</p>
-      <p id="questionIMG"></p>
-      <!-- we'll want to populate questions here -->
+    <div id="questionsDiv" class="row hide">
+      <div class="col s12">
+        <div class="card white">
+          <div class="card-content black-text">
+            <span id="question" class="card-title">Who's that Pokemon?</span>
+            <!-- spot for question image to be plopped -->
+            <p id="questionIMG" class="center-align"></p>
+            <!-- spot where the feedback appears -->
+            <p id="feedback"></p>
+          </div>
+        </div>
+      </div>
     </div>
+
 
     <!-- answers div -->
     <!-- hidden on landing, shown after clicking startBtn -->
-    <div id="answersDiv" class="hide white">
-      <!-- we'll want to put answers here that correspond to the current question shown above -->
+    <div id="answersDiv" class="row hide white center-align blue darken-1">
+      <!-- Answer buttons populate here-->
+      <div id="answer0" class="col s6 m3"></div>
+      <div id="answer1" class="col s6 m3"></div>
+      <div id="answer2" class="col s6 m3"></div>
+      <div id="answer3" class="col s6 m3"></div>
     </div>
-
 
 
     <!-- Quiz finish screen -->
     <!-- hidden on landing, shown after end of quiz -->
-    <div id="finished" class="white">
-      <!-- Text that's displayed for your final score -->
-      <div>
-        <h3 id="finalScore" class="hide"></h3>
+    <section id="finished" class="row hide">
+      <div class="col s12">
+        <div class="card white">
+          <div class="card-content black-text">
+            <span class="card-title">Game over!</span>
+            <!-- feedback image about your score -->
+            <p id="finalScore" class="hide"></p>
+            <!-- opportunity to save high score if you get a high score -->
+            <form id="userSet" class="hide">
+              <div id="input">
+                <!-- visible text -->
+                <label for="user">User: </label>
+                <!-- text input box -->
+                <input type="text" name="user" id="user" placeholder="your name">
+              </div>
+              <div>
+                <!-- save high score button -->
+                <button id="save" class="save waves-effect waves-light btn blue darken-1 yellow-text text-darken-1">Save
+                  High Score</button>
+              </div>
+            </form>
+          </div>
+          <!-- start over button -->
+          <div class="card-action blue darken-1">
+            <a href="#" id="startOver" class="hide yellow-text text-darken-1">Start Over</a>
+          </div>
+        </div>
       </div>
+    </section>
 
-      <!-- form for inputting a username if you achieve a high score -->
-      <form id="userSet" class="hide">
-        <div id="input">
-          <!-- visible text -->
-          <label for="initials">Your initials: </label>
-          <!-- text input box -->
-          <input type="text" name="initials" id="initials" placeholder="your initials">
-        </div>
-        <div>
-          <!-- save high score button -->
-          <button id="save" class="save waves-effect waves-light btn">Save High Score</button>
-        </div>
-      </form>
+    <!-- end of container div -->
+  </main>
 
-      <button id="startOver" class="hide waves-effect waves-light btn">Start Over</button>
+<!-- image of Ash and Pikachu below quiz -->
+  <div class="row">
+    <div class="col sm12">
+      <img id="ashPika" src="https://clipart.info/images/ccovers/1528080662Ash-Pikachu-Pokemon-Png.png">
     </div>
+  </div>
 
 
     
     
-    <img id="ashPika" src="https://clipart.info/images/ccovers/1528080662Ash-Pikachu-Pokemon-Png.png">
-        <!-- end of container div -->
-      </main>
-
 
 
 
@@ -145,13 +193,14 @@
           </div>
         </div>
       </div>
-      <div class="footer-copyright">
-        <div class="container yellow-text">
-          © 2020 Copyright Pokemon Fans
-          <a class="yellow-text right" href="index.html">Back to top</a>
-        </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container yellow-text">
+        © 2020 Copyright Pokemon Fans
+        <a class="yellow-text right" href="index.html">Back to top</a>
       </div>
-    </footer>
+    </div>
+  </footer>
 
 
 
