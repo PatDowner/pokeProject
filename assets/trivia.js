@@ -2,7 +2,7 @@
 let highScore = 0
 
 // user name indicates no high score until player has logged an initial high score
-let userName = 'No current high score'
+let userName = 'None'
 
 // recalls last high score if user has visited page before or sets up an empty array ready to accept a new high score
 let pokeScoreLog = JSON.parse(localStorage.getItem('pokeScoreLog')) || []
@@ -15,8 +15,8 @@ for (let i = 0; i < pokeScoreLog.length; i++) {
 
 // Display current highScore in HTML
 document.getElementById('highScore').innerHTML = `
-High Score:&nbsp;${highScore}<br>
-User: ${userName}
+<span class="card-title">High Score: ${highScore}</span>
+<p>User: ${userName}</p>
 `
 
 
@@ -29,7 +29,7 @@ let random
 let answers = []
 let answer
 let score = 0
-document.getElementById('score').innerHTML = `Score: ${score}`
+document.getElementById('score').innerHTML = `${score} points`
 
 // Set timer start value
 let seconds = 90
@@ -37,6 +37,7 @@ let seconds = 90
 // get 4 new pokemon (and a correct one) to pull for a question
 const newValues = () => {
   pick4 = []
+  document.getElementById('feedback').classList.add('hide')
 
   // picks 4 values for the pick4 array
   for (let i = 0; i < 4; i++) {
@@ -125,7 +126,7 @@ const questionImage = (y) => {
   axios.get(`https://pokeapi.co/api/v2/pokemon/${random}`)
     .then(res => {
       console.log(res.data.sprites.other.dream_world.front_default)
-      document.getElementById('questionIMG').innerHTML = `
+      document.getElementById('questionIMG').replaceWith = `
       <img id="pokeIMG" src="${res.data.sprites.other.dream_world.front_default}" class="brightness">
       `
     })
@@ -134,7 +135,6 @@ const questionImage = (y) => {
   console.log(random)
   // end questionImage
 }
-
 
 const endGame = () => {
   document.getElementById('questionsDiv').classList.add('hide')
@@ -183,9 +183,9 @@ const endGame = () => {
 
       // Display current high score in HTML
       document.getElementById('highScore').innerHTML = `
-        High Score: ${highScore}<br>
-        User: ${userName}
-        `
+      <span class="card-title">High Score: ${highScore}</span>
+      <p>User: ${userName}</p>
+      `
       // show start over button
       document.getElementById('startOver').classList.remove('hide')
     })
@@ -258,10 +258,11 @@ document.addEventListener('click', event => {
 
     if (event.target.dataset.pokeName === random) {
       document.getElementById('pokeIMG').classList.remove('brightness')
+      document.getElementById('feedback').classList.remove('hide')
       console.log('correct')
-      document.getElementById('feedback').innerText = 'Previous question: Correct!'
+      document.getElementById('feedback').innerText = 'Correct!'
       score++
-      document.getElementById('score').innerHTML = `Score: ${score}`
+      document.getElementById('score').innerHTML = `${score} points`
       setTimeout(() => {
         if (seconds > 0) {
           newValues()
@@ -273,8 +274,9 @@ document.addEventListener('click', event => {
       }, 750)
     } else {
       document.getElementById('pokeIMG').classList.remove('brightness')
+      document.getElementById('feedback').classList.remove('hide')
       console.log('wrong')
-      document.getElementById('feedback').innerText = 'Previous question: Wrong!'
+      document.getElementById('feedback').innerText = 'Wrong!'
       setTimeout(() => {
         if (seconds > 0) {
           newValues()

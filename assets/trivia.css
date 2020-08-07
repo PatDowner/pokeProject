@@ -1,3 +1,4 @@
+/* gives grey background color and helps pin the footer at the bottom */
 body {
   background-color: grey;
   display: flex;
@@ -5,22 +6,32 @@ body {
   flex-direction: column;
 }
 
+/* help pin the footer to the bottom */
 main {
   flex: 1 0 auto;
 }
 
+/* to allow us to hide/reveal parts of the page as desired */
 .hide {
   display: none;
 }
 
+/* to format the row of the main content that contains various in-game stats (the red/blue/yellow */
 #stats {
+  /* makes sure there's no gap between this and the div with the questions */
   margin-bottom: 0px;
 }
 
+/* sets size and font
 .statsCol {
-  height: 40px;
+  font-size: 30px;
+  min-height: 65px;
   text-align: center;
-}
+} */
+
+/* .generalFont {
+  font-size: 20px;
+} */
 
 button {
   margin: 20px;
@@ -38,7 +49,9 @@ button {
   filter: brightness(0);
   -webkit-filter: brightness(0);
 }
-
+#feedback {
+  font-size: 32px;
+}
 #ashPika {
   height: 50%;
   vertical-align: center;
