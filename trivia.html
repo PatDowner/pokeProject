@@ -95,7 +95,7 @@
     <!-- question div -->
     <!-- hidden on landing, shown after clicking startBtn -->
 
-    <div id="questionsDiv" class="row hide">
+    <!-- <div id="questionsDiv" class="row hide">
       <div class="col s12">
         <div class="card">
           <div class="card-image">
@@ -104,19 +104,29 @@
           </div>
           <div class="card-content">
             <p id="question">Who's that Pokemon?</p>
-          </div>
-          <!-- <div id="answersDiv" class="row card-action blue darken-1"> -->
-            <!-- <a href="#!" class="collection-item">Alvin</a>
+          </div> -->
+    <!-- <div id="answersDiv" class="row card-action blue darken-1"> -->
+    <!-- <a href="#!" class="collection-item">Alvin</a>
             <a href="#!" class="collection-item active">Alvin</a>
             <a href="#!" class="collection-item">Alvin</a>
             <a href="#!" class="collection-item">Alvin</a> -->
 
-          <!-- </div> -->
+    <!-- </div> -->
+    <!-- </div>
+      </div>
+    </div> -->
+
+    <div id="questionsDiv" class="row hide">
+      <div class="col s12">
+        <div class="card white">
+          <div class="card-content black-text">
+            <span id="question" class="card-title">Who's that Pokemon?</span>
+            <p id="questionIMG" class="center-align"></p>
+            <p id="feedback"></p>
+          </div>
         </div>
       </div>
     </div>
-
-
 
     <!-- <div id="questionsDiv" class="hide white generalFont"> -->
     <!-- <p id="question">Who's that Pokemon?</p> -->
@@ -136,43 +146,55 @@
 
     <!-- Quiz finish screen -->
     <!-- hidden on landing, shown after end of quiz -->
-    <div id="finished" class="white">
-      <!-- Text that's displayed for your final score -->
-      <div>
+    <!-- <div id="finished" class="white"> -->
+    <!-- Text that's displayed for your final score -->
+    <!-- <div>
         <h3 id="finalScore" class="hide"></h3>
+      </div> -->
+
+    <!-- form for inputting a username if you achieve a high score -->
+
+
+    <!-- <button id="startOver" class="hide waves-effect waves-light btn">Start Over</button>
+    </div> -->
+
+    <section id="finished" class="row hide">
+      <div class="col s12">
+        <div class="card white">
+          <div class="card-content black-text">
+            <span class="card-title">Game over!</span>
+            <p id="finalScore" class="hide"></p>
+            <form id="userSet" class="hide">
+              <div id="input">
+                <!-- visible text -->
+                <label for="user">User: </label>
+                <!-- text input box -->
+                <input type="text" name="user" id="user" placeholder="your name">
+              </div>
+              <div>
+                <!-- save high score button -->
+                <button id="save" class="save waves-effect waves-light btn blue darken-1 yellow-text text-darken-1">Save
+                  High
+                  Score</button>
+              </div>
+            </form>
+          </div>
+          <div class="card-action blue darken-1">
+            <a href="#" id="startOver" class="hide yellow-text text-darken-1">Start Over</a>
+          </div>
+        </div>
       </div>
+    </section>
 
-      <!-- form for inputting a username if you achieve a high score -->
-      <form id="userSet" class="hide">
-        <div id="input">
-          <!-- visible text -->
-          <label for="initials">Your initials: </label>
-          <!-- text input box -->
-          <input type="text" name="initials" id="initials" placeholder="your initials">
-        </div>
-        <div>
-          <!-- save high score button -->
-          <button id="save" class="save waves-effect waves-light btn blue darken-1 yellow-text text-darken-1">Save High Score</button>
-        </div>
-      </form>
-
-      <button id="startOver" class="hide waves-effect waves-light btn">Start Over</button>
-    </div>
-
-
-
-
-    <img id="ashPika" src="https://clipart.info/images/ccovers/1528080662Ash-Pikachu-Pokemon-Png.png">
     <!-- end of container div -->
   </main>
-
-
-
-
-
-
-
-
+  
+  
+  <div class="row">
+  <div class="col sm12">
+    <img id="ashPika" src="https://clipart.info/images/ccovers/1528080662Ash-Pikachu-Pokemon-Png.png">
+    </div>
+  </div>
 
   <footer class="page-footer blue darken-4">
     <div class="container">

@@ -32,12 +32,13 @@ let score = 0
 document.getElementById('score').innerHTML = `${score} points`
 
 // Set timer start value
-let seconds = 90
+let seconds = 10
 
 // get 4 new pokemon (and a correct one) to pull for a question
 const newValues = () => {
   pick4 = []
-  document.getElementById('feedback').classList.add('hide')
+  document.getElementById('feedback').innerText = ''
+  document.getElementById('feedback').className = ''
 
   // picks 4 values for the pick4 array
   for (let i = 0; i < 4; i++) {
@@ -139,6 +140,7 @@ const questionImage = (y) => {
 const endGame = () => {
   document.getElementById('questionsDiv').classList.add('hide')
   document.getElementById('answersDiv').classList.add('hide')
+  document.getElementById('finished').classList.remove('hide')
 
   if (score > highScore) {
     // set user's score to be the current highScore
@@ -146,7 +148,8 @@ const endGame = () => {
 
     // display text congratulating user
     document.getElementById('finalScore').innerHTML = `
-      <p>Congratulations! You have achieved a new high score!!</p>
+      <p>Congratulations!</p>
+      <p>You have achieved a new high score!!</p>
       <p>Your Score: ${highScore}</p>
       `
 
@@ -159,7 +162,7 @@ const endGame = () => {
       event.preventDefault()
 
       // take user's input and store as userName
-      userName = document.getElementById('initials').value
+      userName = document.getElementById('user').value
 
       // scoreObj array that will be pushed onto pokeScoreLog
       let scoreObj = {
@@ -258,7 +261,7 @@ document.addEventListener('click', event => {
 
     if (event.target.dataset.pokeName === random) {
       document.getElementById('pokeIMG').classList.remove('brightness')
-      document.getElementById('feedback').classList.remove('hide')
+      document.getElementById('feedback').className = 'green'
       console.log('correct')
       document.getElementById('feedback').innerText = 'Correct!'
       score++
@@ -274,7 +277,7 @@ document.addEventListener('click', event => {
       }, 750)
     } else {
       document.getElementById('pokeIMG').classList.remove('brightness')
-      document.getElementById('feedback').classList.remove('hide')
+      document.getElementById('feedback').className = 'red'
       console.log('wrong')
       document.getElementById('feedback').innerText = 'Wrong!'
       setTimeout(() => {

@@ -31,8 +31,8 @@ button {
 }
 #pokeIMG {
   width: 75%;
-  max-height: 300px;
-  margin-top: 20px;
+  max-height: 250px;
+  /* margin-top: 20px; */
 }
 
 .brightness {
@@ -41,10 +41,13 @@ button {
 }
 #feedback {
   font-size: 32px;
+  height: 45px;
+  width: 100%;
+  padding: 5px;
+  margin-top: -25px;
 }
 #ashPika {
-  height: 200px;
-  text-align: center;
+  height: 250px;
 }
 
 footer {
