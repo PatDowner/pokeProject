@@ -41,7 +41,7 @@ Another feature of this application is the "Trivia" page.  We used the PokeAPI h
 ## PokeBlog page
 This page is dedicated to find other resources, information, and Pokemon lore.  There are many different stylings and tons of information about pokemon at this page where a user has access to get more involved and learn more.
 
-## About Me
+## About Us
 Lists all group members and our photos.
 All members listed with the their function and assigned task.  
 These tasks were not locked, we crossed platformed and assisted each other on specific issues that came up.
