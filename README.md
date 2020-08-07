@@ -1,5 +1,5 @@
 # pokeProject Landing page.  UCI Coding Bootcamp Project 1, August 2020.
-Groupe Members:  Pat Downer, Kalyn Simms, Brian Ratunil, Devin Castro, Dave Trimboli, Jamie Kim.
+
 
 A poke Fan page made by fans for fans.
 
@@ -12,3 +12,13 @@ Clicking on this card will open an small article exerpt from the source.
 -Navigation bar collapses on smaller screens with a button to bring up links.  Home is always visible.
 -Navigation and footer theme colors are blue background with yellow font, to replicate the Pokemon Logo and theme.
 -Navigation and footer panel links to; Data, Cards, Trivia, Blog, and About Us pages.
+
+
+
+
+
+
+About us Page:
+Groupe Members:  Pat Downer, Kalyn Simms, Brian Ratunil, Devin Castro, Dave Trimboli, Jamie Kim.
+All members listed with the their function and assigned task.  
+These tasks were not locked, we crossed platformed and assisted each other on specific issues that came up.
