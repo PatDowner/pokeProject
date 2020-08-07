@@ -20,9 +20,6 @@ document.getElementById('highScore').innerHTML = `
 `
 
 
-
-
-
 // setting up some arrays variables to populate later
 let pick4 = []
 let random
@@ -32,7 +29,7 @@ let score = 0
 document.getElementById('score').innerHTML = `${score} points`
 
 // Set timer start value
-let seconds = 10
+let seconds = 60
 
 // get 4 new pokemon (and a correct one) to pull for a question
 const newValues = () => {
@@ -43,7 +40,7 @@ const newValues = () => {
   // picks 4 values for the pick4 array
   for (let i = 0; i < 4; i++) {
     let y = Math.floor(Math.random() * 150) + 1
-    // this if statement makes sure that we're not duplicating values
+    // this if statement makes sure that we're not duplicating values within our selection
     if (pick4.includes(y)) {
       console.log('try again')
       i--
@@ -79,7 +76,10 @@ const answerButtons = (x, y) => {
   answers = []
 
   // clear out the div to make room for new questions
-  document.getElementById('answersDiv').innerHTML = ''
+  document.getElementById('answer0').innerHTML = ''
+  document.getElementById('answer1').innerHTML = ''
+  document.getElementById('answer2').innerHTML = ''
+  document.getElementById('answer3').innerHTML = ''
 
   // some how in this loop the answer order shifts. Same overall answers, but shifted by 1 (with the last one looped around to take the first position).
   // loop to make answer buttons
@@ -99,7 +99,7 @@ const answerButtons = (x, y) => {
         answersElem.innerHTML = `
       ${res.data.name}
       `
-        document.getElementById('answersDiv').append(answersElem)
+        document.getElementById(`answer${i}`).append(answersElem)
 
       })
       .catch(err => { console.log(err) })
@@ -178,9 +178,8 @@ const endGame = () => {
 
       // display confirmation that new highScore is saved
       document.getElementById('input').innerHTML = `
-      <p class="text-success">New high score saved!<br>
-      High Score: ${highScore}<br>
-      User: ${userName}</p>
+      <p>User: ${userName}</p>
+      <p class="green-text">New high score saved!</p>
       `
       document.getElementById('save').classList.add('hide')
 
@@ -214,15 +213,17 @@ const endGame = () => {
 // when we click start...
 document.getElementById('startBtn').addEventListener('click', event => {
   event.preventDefault()
+  // hide/show the specified divs
   document.getElementById('instructionsDiv').classList.add('hide')
   document.getElementById('questionsDiv').classList.remove('hide')
   document.getElementById('answersDiv').classList.remove('hide')
 
+  // reset the variables that generate the question and answers
   newValues()
+  // populate the answer buttons
   answerButtons(pick4, random)
+  // pull the correct image for the question
   questionImage(random)
-  // console.log(pick4)
-  // console.log(random)
 
   // start a timer that runs over intervals of 1 second (1000 ms)
   timer = setInterval(() => {
@@ -240,43 +241,53 @@ document.getElementById('startBtn').addEventListener('click', event => {
       endGame()
     }
   }, 1000)
-
-
-
+  // end of the when we click start list
 })
 
+// if start over is clicked, it refreshes the page to rest everything
 document.getElementById('startOver').addEventListener('click', event => {
   location.reload()
 })
 
 // global event listener
 document.addEventListener('click', event => {
-
   event.preventDefault()
 
+  // if you click an answer button
   if (event.target.classList.contains('answerBtn')) {
     console.log('works')
 
-
-
+    // check to see if the button you clicked matches the 'random' correct answer
     if (event.target.dataset.pokeName === random) {
+      // remove the fake-mask effect on the pokemon image so we can see how it's supposed to look
       document.getElementById('pokeIMG').classList.remove('brightness')
+      // set background of the feedback text as green
       document.getElementById('feedback').className = 'green'
       console.log('correct')
+      // what feedback text to display
       document.getElementById('feedback').innerText = 'Correct!'
+      // increase the score by 1
       score++
+      // update the points on the HTML page
       document.getElementById('score').innerHTML = `${score} points`
+
+      // then, as long as our timer is greater than zero...
       setTimeout(() => {
         if (seconds > 0) {
+          // keep generating new questions
           newValues()
           answerButtons(pick4, random)
           questionImage(random)
         } else {
+          // when the timer runs out, run the endGame() function
           endGame()
         }
       }, 750)
     } else {
+      // if the answer clicked doesn't match the correct answer...
+      // remove the fake-mask effect on the pokemon image so we can see how it's supposed to look
       document.getElementById('pokeIMG').classList.remove('brightness')
+      // set background of the feedback text as green
       document.getElementById('feedback').className = 'red'
       console.log('wrong')
       document.getElementById('feedback').innerText = 'Wrong!'
@@ -291,12 +302,10 @@ document.addEventListener('click', event => {
       }, 750)
     }
 
-
+    // end of answerBtn listener
   }
 
-
-
-
+  // end of global event listener
 })
 
 
@@ -304,15 +313,13 @@ document.addEventListener('click', event => {
 
 
 
+// Possible future functionality of the quiz:
+// Allow users to specify the parameters of their quiz by controlling things like which region's sets of pokemon they want to be quized on (instead of our default to that first set of 150)
 
 
 
-
-// questionTypes[
-  //   {
-    //     question: "Which Pokemon is this?"
-    //     question: "What type of Pokemon is this?"
-    //     question: "Which of the following types is this pokemon weak against?"
-//     question: "Which of the following types is this pokemon strong against?"
-//   }
-// ]
+// possible additional questionTypes:
+// What type of Pokemon is this?
+// Which of the following types is this pokemon weak/strong against?
+// What does this pokemon evolve into/from?
+// what region is this pokemon found in?
