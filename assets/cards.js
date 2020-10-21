@@ -32,7 +32,7 @@ axios.get(`https://api.pokemontcg.io/v1/cards`)
       // let n = Math.floor(Math.random() * shuffledArray.length)
 
       // sets column width and gives it a class for styling purposes
-      randomCard.className = 'col s12 m6 l4 cardDiv'
+      randomCard.className = 'col cardDiv'
 
       // gets the image link and some other info specific to that card
       let imgLink = shuffledArray[i].imageUrlHiRes
@@ -129,7 +129,7 @@ const searchClicked = (x) => {
         let pokeCard = document.createElement('div')
 
         // sets the column width of the div as well as gives it a class for styling purposes
-        pokeCard.className = 'col s12 m6 l4 xl3 cardDiv'
+        pokeCard.className = 'col cardDiv'
 
         // gets the image link and some other info specific to that card
         let imgLink = shuffledArray[i].imageUrlHiRes

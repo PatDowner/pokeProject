@@ -24,26 +24,30 @@ body {
 #srcBy {
   font-size: 30px;
   height: 100%;
-  padding-top: 15px;
-  padding-bottom: 15px;
+  padding-top: 25px;
+  padding-bottom: 25px;
 }
 
 /* formats input fields in search bar reminder: color background color set via classes */
 
 #inputName {
   border: 1px solid lightgray;
-  margin-top: 15px;
+  margin: 0px;
   padding-left: 12px;
-  width: 150px;
+  width: 125px;
+  height: 43px;
 }
 
-
+.btn {
+  margin-left: 5px;
+}
 
 /* This is for stuff that's visible on page before the first search */
 
 #randomDisplay {
-  padding: 0px;
-  justify-content: space-around;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 /* Put anything that formats search results below this line */
@@ -66,12 +70,16 @@ body {
 /* the div that wraps all the way around cards and their info box. This was just to remove some extra space around search results */
 
 #cardDisplay {
-  margin-left: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .cardDiv {
+  width: 249px;
   padding: 0px;
   margin: 0px;
+  margin-bottom: 10px;
 }
 
 /* controls the image of the card itself */
