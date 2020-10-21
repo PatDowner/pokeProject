@@ -1,4 +1,15 @@
-# Poke Project
+# Poke Project (updated)
+
+## Summary of Updates
+This update is still a work in progress. It is an update to the app that was my first group project for my Coding Boot Camp. The primary purpose of this update is to revise some of the glaring issues that existed at the time the app was submitted for our class project.
+
+Most of the issues that need updating are styling related, the most glaring of which were not on the sections of the project I was initially responsible for. Styling updates are made to both larger screen sizes as well as to improve responsiveness of the layout on smaller and mobile screens. However, the home and PokeBlog pages need content work as well.
+
+This updated version of the application is deployed at: https://patdowner.github.io/pokeProject/
+
+
+## Other App Info
+Below is the content of the Read Me from the original iteration of our app.
 
 >### Group Project by:
 >* Devin Castro
@@ -8,7 +19,7 @@
 >* Jamie Kim
 >* Brian Ratunil
 
-This application is deployed at : https://kalynbsimms.github.io/pokeProject/
+The original application is deployed at : https://kalynbsimms.github.io/pokeProject/
 
 ### A Pokemon Fan page made by fans for fans.
 * Upon arrival to the landing page you are immediately greeted with small introduction and history on Pokemon with a link to the source (wikipedia). Clicking on this card will open an small article exerpt from the source.
