@@ -1,4 +1,5 @@
 /* gives grey background color and helps pin the footer at the bottom */
+
 body {
   background-color: grey;
   display: flex;
@@ -7,44 +8,58 @@ body {
 }
 
 /* impacts footer placement at bottom */
+
 main {
   flex: 1 0 auto;
 }
 
 /* to allow us to hide/reveal parts of the page as desired */
+
 .hide {
   display: none;
 }
 
-/* give some space around the buttons */
+/* give some space around the button text */
+
 button {
-  margin: 5px;
   padding: 5px;
 }
 
 /* make sure the answer buttons fill the columns as much as possible */
+
 .answerBtn {
   width: 100%;
+  margin: 13px 0px;
+}
+
+
+/* sizing of blue box around answer choices */
+#answersDiv {
+  width: 97%;
 }
 
 /* set a height for the card that contains the question */
+
 #questionIMG {
   height: 250px;
 }
 
 /* sets height of the question images */
+
 #pokeIMG {
   width: 75%;
   max-height: 250px;
 }
 
 /* this class allows us to overlay a solid black layer on the image to give an outline/shaddow effect that we can toggle on and off throughout the quiz */
+
 .brightness {
   filter: brightness(0);
   -webkit-filter: brightness(0);
 }
 
 /* setting the sizing & placement for the correct/wrong feedback that pops up when each question is answered */
+
 #feedback {
   font-size: 32px;
   height: 45px;
@@ -54,6 +69,11 @@ button {
 }
 
 /* setting a size for the image of Ash & Pikachu */
+
 #ashPika {
-  height: 250px;
+  width: 75%;
+  max-width: 700px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
 }
